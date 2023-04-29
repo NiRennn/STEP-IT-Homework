@@ -81,15 +81,54 @@ void Editor(){
         }
     }
 
-    void sortName(){
+    void sortName(Book** books){
 
+        for (size_t i = 0; books[i] != nullptr; i++)
+        {
+            for (size_t j = 0; books[j] != nullptr; j++)
+            {
+                if ((int) books[i]->Name[0] < (int) books[j]->Name[0])
+                {
+                    char* rev = books[i]->Name;
+                    books[i]->Name = books[j]->Name;
+                    books[j]->Name = rev;
 
+                    rev = books[i]->Author;
+                    books[i]->Author = books[j]->Author;
+                    books[j]->Author = rev;
+
+                    rev = books[i]->Genre;
+                    books[i]->Genre = books[j]->Genre;
+                    books[j]->Genre = rev;
+                }
+            }
+        }
 
     }
 
 
-    void sortGenres(){
+    void sortGenres(Book** books){
+        for (size_t i = 0; books[i] != nullptr; i++)
+        {
+            for (size_t j = 0; books[j] != nullptr; j++)
+            {
+                if ((int) books[i]->Genre[0] < (int) books[j]->Genre[0])
+                {
+                    char* rev = books[i]->Genre;
+                    books[i]->Genre = books[j]->Genre;
+                    books[j]->Genre = rev;
 
+                    rev = books[i]->Name;
+                    books[i]->Name = books[j]->Name;
+                    books[j]->Name = rev;
+
+                    rev = books[i]->Author;
+                    books[i]->Author = books[j]->Author;
+                    books[j]->Author = rev;
+
+                }
+            }
+        }
 
 
     }
@@ -184,14 +223,12 @@ while(true) {
         case 3:
             system("cls");
             books->print(books);
-
             books->findAuthor(books);
 
             break;
         case 4:
             system("cls");
             books->print(books);
-
             books->findName(books);
 
 
@@ -200,14 +237,14 @@ while(true) {
             system("cls");
             books->print(books);
 
-            books->sortName();
+            books->sortName(&books);
 
             break;
         case 6:
             system("cls");
             books->print(books);
 
-            books->sortGenres();
+            books->sortGenres(&books);
 
             break;
     }
