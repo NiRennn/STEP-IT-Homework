@@ -49,8 +49,8 @@ cmake_ninja_workdir = C$:/STEP$ IT$ Homework/cmake-build-debug/
 
 build cmake_object_order_depends_target_STEP_IT_Homework: phony || CMakeFiles/STEP_IT_Homework.dir
 
-build CMakeFiles/STEP_IT_Homework.dir/DZC_C++_23.04(2).cpp.obj: CXX_COMPILER__STEP_IT_Homework_Debug C$:/STEP$ IT$ Homework/DZC_C++_23.04(2).cpp || cmake_object_order_depends_target_STEP_IT_Homework
-  DEP_FILE = CMakeFiles\STEP_IT_Homework.dir\DZC_C++_23.04(2).cpp.obj.d
+build CMakeFiles/STEP_IT_Homework.dir/List-to-do.cpp.obj: CXX_COMPILER__STEP_IT_Homework_Debug C$:/STEP$ IT$ Homework/List-to-do.cpp || cmake_object_order_depends_target_STEP_IT_Homework
+  DEP_FILE = CMakeFiles\STEP_IT_Homework.dir\List-to-do.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\STEP_IT_Homework.dir
   OBJECT_FILE_DIR = CMakeFiles\STEP_IT_Homework.dir
@@ -63,7 +63,7 @@ build CMakeFiles/STEP_IT_Homework.dir/DZC_C++_23.04(2).cpp.obj: CXX_COMPILER__ST
 #############################################
 # Link the executable STEP_IT_Homework.exe
 
-build STEP_IT_Homework.exe: CXX_EXECUTABLE_LINKER__STEP_IT_Homework_Debug CMakeFiles/STEP_IT_Homework.dir/DZC_C++_23.04(2).cpp.obj
+build STEP_IT_Homework.exe: CXX_EXECUTABLE_LINKER__STEP_IT_Homework_Debug CMakeFiles/STEP_IT_Homework.dir/List-to-do.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\STEP_IT_Homework.dir
