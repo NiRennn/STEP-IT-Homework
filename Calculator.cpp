@@ -1,256 +1,195 @@
 #include <iostream>
 using namespace std;
 
-
-#pragma region FunkCalculator
-
-void pluss(int *arrNums,char *arrOper, int i)
+void plusMinus(float *&numbers, char *&oper, int &i)
 {
-    arrNums[i] = arrNums[i] + arrNums[i + 1];
     int j{};
-    if (arrNums[i + 1] != '\0')
+    if (oper[i] == '+')numbers[i] = numbers[i] + numbers[i + 1];
+    else if (oper[i] == '-')
+        numbers[i] = numbers[i] - numbers[i + 1];
+    if (numbers[i + 1] != '\0')
         j = i + 1;
     else
         j = i;
-    while(arrNums[j + 1] != '\0')
+    while (numbers[j + 1] != '\0')
     {
-        arrNums[j] = arrNums[j + 1];
+        numbers[j] = numbers[j + 1];
         j++;
     }
-    arrNums[j] = '\0';
     j = i;
-    while(arrOper[j] != '\0')
+    while (oper[j] != '\0')
     {
-        arrOper[j] = arrOper[j + 1];
+        oper[j] = oper[j + 1];
         j++;
     }
-    arrOper[j] = '\0';
     i--;
 }
 
-void minuss(int *arrNums,char *arrOper, int i)
+void umnDel(float *&numbers, char *&oper, int &i)
 {
-    arrNums[i] = arrNums[i] - arrNums[i + 1];
     int j{};
-    if (arrNums[i + 1] != '\0')
+    if (oper[i] == '*')
+        numbers[i] = numbers[i] * numbers[i + 1];
+    else if (oper[i] == '/')
+        numbers[i] = numbers[i] / numbers[i + 1];
+
+    if (numbers[i + 1] != '\0')
         j = i + 1;
     else
         j = i;
-    while (arrNums[j + 1] != '\0') {
-        arrNums[j] = arrNums[j + 1];
-        j++;
-    }
-    arrNums[j] = '\0';
-    j = i;
-    while (arrOper[j] != '\0')
+    while (numbers[j + 1] != '\0')
     {
-        arrOper[j] = arrOper[j + 1];
+        numbers[j] = numbers[j + 1];
         j++;
     }
-    arrOper[j] = '\0';
+    j = i;
+    while (oper[j] != '\0')
+    {
+        oper[j] = oper[j + 1];
+        j++;
+    }
     i--;
 }
 
-void umnojenie(int *arrNums,char *arrOper, int i)
+char *otric(float *&numbers, char *&oper)
 {
-    arrNums[i] = arrNums[i] * arrNums[i + 1];
-    int j{};
-    if (arrNums[i + 1] != '\0')
-        j = i + 1;
-    else
-        j = i;
-    while(arrNums[j + 1] != '\0')
-    {
-        arrNums[j] = arrNums[j + 1];
-        j++;
-    }
-    arrNums[j] = '\0';
-    j = i;
-    while(arrOper[j] != '\0')
-    {
-        arrOper[j] = arrOper[j + 1];
-        j++;
-    }
-    arrOper[j] = '\0';
-    i--;
-}
+    bool close = true;
+    char *calculator = new char[401]{};
+    char *skobki = new char[20]{};
+    while (close) {
+        numbers = new float[200]{};
+        oper = new char[200]{};
 
-void delenie(int *arrNums,char *arrOper, int i)
-{
-    arrNums[i] = arrNums[i] / arrNums[i + 1];
-    int j{};
-    if (arrNums[i + 1] != '\0')
-        j = i + 1;
-    else
-        j = i;
-    while(arrNums[j + 1] != '\0')
-    {
-        arrNums[j] = arrNums[j + 1];
-        j++;
-    }
-    arrNums[j] = '\0';
-    j = i;
-    while(arrOper[j] != '\0')
-    {
-        arrOper[j] = arrOper[j + 1];
-        j++;
-    }
-    arrOper[j] = '\0';
-    i--;
-}
+        cout << "Enter example: ";
+        cin.getline(calculator, 100);
 
-void skobki(int *arrNums, char *arrOper, int i)
-{
-    for (int j = i + 1; j != ')' ; j++)
-    {
-        for (int k = j; arrOper[i] != '\0'; i++)
+        for (size_t i{}; (int) calculator[i] != (int) '\0'; i++)
         {
-            if (arrOper[i] == '*')
-            {
-                umnojenie(arrNums,arrOper,k);
-            }
+            if (((int) calculator[i] < 48 || (int) calculator[i] > 57) && calculator[i] != ' ' &&
+                ((int) calculator[i] < 40 || (int) calculator[i] > 47))
+                continue;
         }
-        for(int k = j; arrOper[i] != '\0'; i++)
+        close = false;
+
+        for (size_t a = 0, j{}, v{}, z{}; (int) calculator[a] != (int) '\0'; a++)
         {
-            if (arrOper[i] == '/')
+            if ((int) calculator[a] > 47 && (int) calculator[a] < 58) {
+                numbers[j] = (int) calculator[a] - (int) '0';
+                while ((int) calculator[a + 1] > 47 && (int) calculator[a + 1] < 58)
+                {
+                    numbers[j] *= 10;
+                    a++;
+                    numbers[j] += (int) calculator[a] - (int) '0';
+                }
+                j++;
+            } else if ((int) calculator[a] == '(' && (int) calculator[a + 1] == '-')
             {
-                delenie(arrNums,arrOper, k);
+                a += 2;
+                if ((int) calculator[a] > 47 && (int) calculator[a] < 58) {
+                    numbers[j] = (int)calculator[a] - (int) '0';
+                    while ((int) calculator[a + 1] > 47 && (int) calculator[a + 1] < 58)
+                    {
+                        numbers[j] *= 10;
+                        a++;
+                        numbers[j] += (int)calculator[a] - (int) '0';
+                    }
+                    numbers[j] *= -1;
+                    j++;
+                }
+                if (calculator[a + 1] != ')') {
+                    close = true;
+                    continue;
+                } else
+                    a++;
+            } else if ((int) calculator[a] > 39 && (int) calculator[a] < 48)
+            {
+                if (calculator[a] == '(' || calculator[a] == ')')
+                {
+                    skobki[z] = calculator[a];
+                    z++;
+                } else {
+                    oper[v] = calculator[a];
+                    v++;
+                    skobki[z] = calculator[a];
+                    z++;
+                }
             }
         }
-        for(int k = j; arrOper[i] != '\0'; i++)
+        int l1{}, l2{};
+        while (numbers[l1] != '\0')
+            l1++;
+        while (oper[l2] != '\0')
+            l2++;
+
+        if (l1 == l2 || l2 > l1)
         {
-            if (arrOper[i] == '+')
-            {
-                pluss(arrNums,arrOper,k);
-            }
-        }
-        for(int k = j; arrOper[i] != '\0'; i++) {
-            if (arrOper[i] == '-')
-            {
-                minuss(arrNums, arrOper, k);
-            }
+            close = true;
+            continue;
         }
     }
+
+    for (size_t i = 0; skobki[i] != '\0'; i++)
+    {
+        if (skobki[i] == ')')
+        {
+            for (size_t j = i - 1; skobki[j] != '('; j--)
+            {
+                if (skobki[j] == '*' || skobki[j] == '/')
+                {
+                    int v = j - 1;
+                    umnDel(numbers, oper, v);
+                    int z = j;
+                    for (z; skobki[z] != '\0'; z++)
+                        skobki[z] = skobki[z + 1];
+                    skobki[z - 1] = '\0';
+                    j--;
+                }
+            }
+            for (int j = i - 1; skobki[j] != '('; j--)
+            {
+                if (skobki[j] == '+' || skobki[j] == '-')
+                {
+                    int v = j - 1;
+                    plusMinus(numbers, oper, v);
+                    int z = j;
+                    for (z; skobki[z] != '\0'; z++)
+                        skobki[z] = skobki[z + 1];
+                    skobki[z - 1] = '\0';
+                    j--;
+                }
+                int l = i;
+                for (l; skobki[l] != '\0'; l++)
+                    skobki[l] = skobki[l + 1];
+                skobki[l] == '\0';
+                i--;
+            }
+        }
+    }
+    return calculator;
 }
-#pragma endregion FunkCalculator
 
-
-
-int main() {
-
-
-#pragma region "Calculator"
-
-char *array = new char[30]{};
-
-cout << "Enter your primer: " << endl;
-cin.getline(array,30);
-
-
-
-cout << endl;
-int *arrNums = new int[30];
-char *arrOper = new char[30];
-char *arrOperSkobkiNums = new char[30];
-char *arrOperSkobki = new char[30];
-int *arrNumsSkobki = new int[30];
-
-int countOper{};
-int countNums{};
-int countOperSkobkiNums{};
-
-
-for (int i = 0; i < 30; i++)
+int main()
 {
-    if (char(array[i]) >= 42 && char(array[i]) <=43)
+    float *numbers{};
+    char *calc{};
+    char *oper{};
+
+    calc = otric(numbers, oper);
+
+    for (int i = 0; oper[i] != '\0'; i++)
     {
-        arrOper[countOper] = array[i];
-        countOper++;
-    }
-    else if (char(array[i]) >= 40 && char(array[i]) <=41)
-    {
-        arrOperSkobkiNums[countOperSkobkiNums] = array[i];
-        countOperSkobkiNums++;
-    }
-    else if (char(array[i]) == 45)
-    {
-        arrOper[countOper] = array[i];
-        countOper++;
-    }
-    else if (char(array[i]) == 47)
-    {
-        arrOper[countOper] = array[i];
-        countOper++;
-    }
-    else if (array[i] >= 48 && array[i] <= 57)
-    {
-        arrNums[countNums] = array[i] - 48;
-        countNums++;
+        if (oper[i] == '*' || oper[i] == '/')
+            umnDel(numbers, oper, i);
     }
 
-}
-cout << endl;
-
-
-// 3 + ( 5 * 4 )
-
-//nums = 3 5 4
-//opers = + *
-//skobkaOper = ( * )
-
-
-for (int i = 0; arrOper[i] != '\0'; i++)
-{
-    if (arrOper[i] == '(')
+    for (int i = 0; oper[i] != '\0'; i++)
     {
-        skobki(arrNums,arrOper,i);
+        if (oper[i] == '+' || oper[i] == '-')
+            plusMinus(numbers, oper, i);
     }
-}
 
-for (int i = 0; arrOper[i] != '\0'; i++)
-{
-    if (arrOper[i] == '*')
-    {
-        umnojenie(arrNums,arrOper,i);
-    }
-}
-
-for(int i = 0; arrOper[i] != '\0'; i++)
-{
-    if (arrOper[i] == '/')
-    {
-        delenie(arrNums,arrOper, i);
-    }
-}
-for(int i = 0; arrOper[i] != '\0'; i++)
-{
-    if (arrOper[i] == '+')
-    {
-        pluss(arrNums,arrOper,i);
-    }
-}
-for(int i = 0; arrOper[i] != '\0'; i++) {
-    if (arrOper[i] == '-')
-    {
-        minuss(arrNums, arrOper, i);
-    }
-}
-
-cout << arrNums[0];
-
-
-
-
-
-
-
-#pragma endregion "Calculator"
-
-
-
-
-
-
+    cout << "Result: " << numbers[0] << endl;
 
     return 0;
 }
+
