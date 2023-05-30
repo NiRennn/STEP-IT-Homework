@@ -1,3 +1,0 @@
-C:/STEP IT Homework/cmake-build-debug/CMakeFiles/STEP_IT_Homework.dir
-C:/STEP IT Homework/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/STEP IT Homework/cmake-build-debug/CMakeFiles/rebuild_cache.dir
