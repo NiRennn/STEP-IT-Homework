@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
+#include "Component.h"
 
 
-class VideoCard {
+class VideoCard : public Component{
 public:
     int videoMemorySize{};
     string videoMemoryType{};
@@ -11,7 +12,7 @@ public:
 
     VideoCard() = default;
 
-    VideoCard(int videoMemorySize, string videoMemoryType, int GPU, int memoryFrequency)
+    VideoCard(string make, string model, string serialNumber, int videoMemorySize, string videoMemoryType, int GPU, int memoryFrequency) : Component(make, model, serialNumber)
     {
         this->videoMemorySize = videoMemorySize;
         this->videoMemoryType = videoMemoryType;
