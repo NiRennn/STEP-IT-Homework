@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "DZ_06_06.exe"
+			"path" : "DZ_11_06.exe"
 		},
 		{
-			"path" : "DZ_06_06.pdb"
+			"path" : "DZ_11_06.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -59,7 +59,7 @@
 			]
 		}
 	],
-	"id" : "DZ_06_06::@6890427a1f51a3e7e1df",
+	"id" : "DZ_11_06::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -79,8 +79,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "DZ_06_06",
-	"nameOnDisk" : "DZ_06_06.exe",
+	"name" : "DZ_11_06",
+	"nameOnDisk" : "DZ_11_06.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -101,7 +101,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "main.cpp",
+			"path" : "DZ_11.06.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
