@@ -1,8 +1,29 @@
-//
-// Created by kigor on 01.07.2023.
-//
+#include "iostream"
+using namespace std;
 
-#ifndef DZ_20_06_DZ_20_06_H
-#define DZ_20_06_DZ_20_06_H
+#include <string>
 
-#endif //DZ_20_06_DZ_20_06_H
+//#include "CPU.h"
+#include "RAM.h"
+#include "VideoCard.h"
+#include "MotherBoard.h"
+
+class Computer
+{
+public:
+    Motherboard* motherboard;
+    RAM* operativka;
+    VideoCard* videocard;
+
+
+    Computer() = default;
+
+
+    Computer(Motherboard &motherboard, RAM &operativka, VideoCard& videoCard)
+    {
+        this->motherboard = new Motherboard(motherboard);
+        this->operativka = new RAM(operativka);
+        this->videocard = new VideoCard(videoCard);
+    }
+
+};

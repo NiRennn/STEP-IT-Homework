@@ -1,14 +1,28 @@
-//
-// Created by kigor on 01.07.2023.
-//
-
-#ifndef DZ_20_06_VIDEOCARD_H
-#define DZ_20_06_VIDEOCARD_H
+#include <iostream>
+using namespace std;
 
 
-class VideoCard {
+struct VideoCard {
+public:
+    int *videoMemorySize{};
+    string videoMemoryType{};
+    int *GPU{};
+    int *memoryFrequency{};
 
+    VideoCard() = default;
+
+    VideoCard(int videoMemorySize, string videoMemoryType, int GPU, int memoryFrequency)
+    {
+        this->videoMemorySize = new int(videoMemorySize);
+        this->videoMemoryType = videoMemoryType;
+        this->GPU = new int(GPU);
+        this->memoryFrequency = new int(memoryFrequency);
+    }
+
+
+
+    void createVideoCard();
+    void printVideoCard() const;
 };
 
 
-#endif //DZ_20_06_VIDEOCARD_H

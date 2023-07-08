@@ -1,14 +1,27 @@
-//
-// Created by kigor on 01.07.2023.
-//
-
-#ifndef DZ_20_06_CPU_H
-#define DZ_20_06_CPU_H
+#include <iostream>
+using namespace std;
 
 
-class CPU {
+struct CPU {
+public:
+    string name{};
+    float *clockSpeedCPU{};
+    float *performance{};
+    int *powerConsumption{};
 
+
+    CPU() = default;
+
+    CPU(string name, float clockSpeedCPU, float performance, int powerConsumption)
+    {
+        this->name = name;
+        this->clockSpeedCPU = new float(clockSpeedCPU);
+        this->performance = new float(performance);
+        this->powerConsumption = new int(powerConsumption);
+    }
+
+    void createCPU();
+    void printCPU() const;
 };
 
 
-#endif //DZ_20_06_CPU_H
