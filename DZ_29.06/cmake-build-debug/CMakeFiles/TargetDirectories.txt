@@ -1,0 +1,3 @@
+C:/STEP IT Homework/DZ_29.06/cmake-build-debug/CMakeFiles/DZ_29_06.dir
+C:/STEP IT Homework/DZ_29.06/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/STEP IT Homework/DZ_29.06/cmake-build-debug/CMakeFiles/rebuild_cache.dir
