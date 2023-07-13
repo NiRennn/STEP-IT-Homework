@@ -1,14 +1,36 @@
-//
-// Created by kigor on 05.07.2023.
-//
-
-#ifndef DZ_22_06_RAM_H
-#define DZ_22_06_RAM_H
+#include <iostream>
+using namespace std;
 
 
-class RAM {
+struct RAM {
+public:
+    string moduleType{};
+    string formFactor{};
+    int ramMemory{};
+    float clockSpeedRAM{};
 
+
+    RAM() = default;
+
+    RAM(string moduleType, string formFactor, int ramMemory, float clockSpeedRam)
+    {
+        this->moduleType = moduleType;
+        this->formFactor = formFactor;
+        this->ramMemory = ramMemory;
+        this->clockSpeedRAM = clockSpeedRam;
+    }
+
+    RAM(const RAM& other)
+    {
+        this->moduleType = other.moduleType;
+        this->formFactor = other.formFactor;
+        this->ramMemory = other.ramMemory;
+        this->clockSpeedRAM = other.clockSpeedRAM;
+    }
+
+    void createRAM();
+    void printRAM() const;
 };
 
 
-#endif //DZ_22_06_RAM_H
+
