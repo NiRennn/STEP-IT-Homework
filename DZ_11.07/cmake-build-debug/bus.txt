@@ -1,0 +1,12 @@
+Bus number:2 , Driver name: Elnur Mammedov , Route number: -591558635 , Seats: 30
+
+Bus number:5 , Driver name: Anver Mamedov , Route number: -592474016 , Seats: 21
+
+Bus number:7 , Driver name: Ramil Teymurov , Route number: 0 , Seats: 22
+
+Bus number:12 , Driver name: Igor Kostolomov , Route number: 6 , Seats: 23
+
+Bus number:111 , Driver name: Elvin Azimov , Route number: 0 , Seats: 14
+
+Bus number:201 , Driver name: Rufat Aliyev , Route number: 0 , Seats: 32
+
