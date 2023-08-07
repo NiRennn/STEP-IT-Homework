@@ -3,9 +3,9 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
@@ -26,17 +26,7 @@
       <change beforePath="$PROJECT_DIR$/../DZ_01.06/VideoCard.h" beforeDir="false" afterPath="$PROJECT_DIR$/../DZ_01.06/VideoCard.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DZ_01.06/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../DZ_01.06/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DZ_01.06/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../DZ_01.06/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPU.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPU.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPU.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPU.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DZ_22.06.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DZ_22.06.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DZ_22.06.h" beforeDir="false" afterPath="$PROJECT_DIR$/DZ_22.06.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MotherBoard.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MotherBoard.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MotherBoard.h" beforeDir="false" afterPath="$PROJECT_DIR$/MotherBoard.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RAM.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/RAM.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RAM.h" beforeDir="false" afterPath="$PROJECT_DIR$/RAM.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VideoCard.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/VideoCard.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VideoCard.h" beforeDir="false" afterPath="$PROJECT_DIR$/VideoCard.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +58,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "OOP",
+    "last_opened_file_path": "C:/STEP IT Homework/DZ_25.06",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,11 +67,6 @@
   }
 }]]></component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DZ_22_06" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DZ_22_06" TARGET_NAME="DZ_22_06" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DZ_22_06" RUN_TARGET_NAME="DZ_22_06">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -96,6 +82,9 @@
       <option name="presentableId" value="Default" />
       <updated>1689247195477</updated>
       <workItem from="1689247196899" duration="1449000" />
+      <workItem from="1689249794442" duration="28000" />
+      <workItem from="1689250166145" duration="1275000" />
+      <workItem from="1689510122636" duration="130000" />
     </task>
     <servers />
   </component>

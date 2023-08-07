@@ -1,0 +1,3 @@
+C:/STEP IT Homework/Project_OOP_FinanceManager/cmake-build-debug/CMakeFiles/Project_OOP_FinanceManager.dir
+C:/STEP IT Homework/Project_OOP_FinanceManager/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/STEP IT Homework/Project_OOP_FinanceManager/cmake-build-debug/CMakeFiles/rebuild_cache.dir

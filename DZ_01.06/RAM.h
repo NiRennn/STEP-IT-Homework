@@ -2,12 +2,12 @@
 using namespace std;
 
 
-class RAM {
+struct RAM {
 public:
     string moduleType{};
     string formFactor{};
     int ramMemory{};
-    float clockSpeedRAM{};
+    float clockSpeedRAM{};1
 
 
     RAM() = default;

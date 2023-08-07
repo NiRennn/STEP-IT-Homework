@@ -2,7 +2,7 @@
 using namespace std;
 
 
-class Motherboard {
+struct Motherboard {
 public:
     string motherboardName;
     string chipsetName;

@@ -2,7 +2,7 @@
 using namespace std;
 
 
-class VideoCard {
+struct VideoCard {
 public:
     int videoMemorySize{};
     string videoMemoryType{};
