@@ -1,0 +1,14 @@
+//
+// Created by kigor on 07.08.2023.
+//
+
+#ifndef PROJECT_OOP_FINANCEMANAGER_EXPENSE_H
+#define PROJECT_OOP_FINANCEMANAGER_EXPENSE_H
+
+
+class Expense {
+
+};
+
+
+#endif //PROJECT_OOP_FINANCEMANAGER_EXPENSE_H
