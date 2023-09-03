@@ -1,0 +1,15 @@
+C:\STEP IT Homework\DZ.31.08\DZ.31.08\bin\Debug\net7.0\DZ.31.08.exe
+C:\STEP IT Homework\DZ.31.08\DZ.31.08\bin\Debug\net7.0\DZ.31.08.deps.json
+C:\STEP IT Homework\DZ.31.08\DZ.31.08\bin\Debug\net7.0\DZ.31.08.runtimeconfig.json
+C:\STEP IT Homework\DZ.31.08\DZ.31.08\bin\Debug\net7.0\DZ.31.08.dll
+C:\STEP IT Homework\DZ.31.08\DZ.31.08\bin\Debug\net7.0\DZ.31.08.pdb
+C:\STEP IT Homework\DZ.31.08\DZ.31.08\obj\Debug\net7.0\DZ.31.08.csproj.AssemblyReference.cache
+C:\STEP IT Homework\DZ.31.08\DZ.31.08\obj\Debug\net7.0\DZ.31.08.GeneratedMSBuildEditorConfig.editorconfig
+C:\STEP IT Homework\DZ.31.08\DZ.31.08\obj\Debug\net7.0\DZ.31.08.AssemblyInfoInputs.cache
+C:\STEP IT Homework\DZ.31.08\DZ.31.08\obj\Debug\net7.0\DZ.31.08.AssemblyInfo.cs
+C:\STEP IT Homework\DZ.31.08\DZ.31.08\obj\Debug\net7.0\DZ.31.08.csproj.CoreCompileInputs.cache
+C:\STEP IT Homework\DZ.31.08\DZ.31.08\obj\Debug\net7.0\DZ.31.08.dll
+C:\STEP IT Homework\DZ.31.08\DZ.31.08\obj\Debug\net7.0\refint\DZ.31.08.dll
+C:\STEP IT Homework\DZ.31.08\DZ.31.08\obj\Debug\net7.0\DZ.31.08.pdb
+C:\STEP IT Homework\DZ.31.08\DZ.31.08\obj\Debug\net7.0\DZ.31.08.genruntimeconfig.cache
+C:\STEP IT Homework\DZ.31.08\DZ.31.08\obj\Debug\net7.0\ref\DZ.31.08.dll
