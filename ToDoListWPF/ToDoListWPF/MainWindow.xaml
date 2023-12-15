@@ -1,0 +1,25 @@
+﻿<Window x:Class="ToDoListWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoListWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="400" Background="LightGray">
+    <Grid>
+        <ListBox Name="taskListBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="380" Height="200" Margin="10,10,10,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding IsCompleted}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                        <TextBlock Text="{Binding TaskName}" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <TextBox x:Name ="taskTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="10,225,0,0"/>
+        <Button x:Name ="addTaskButton"  Content="Add Task" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="222,224,0,0" Click="AddTask_Click"/>
+        <Button x:Name="deleteTaskButton" Content="Delete Task" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="302,224,0,0" Click="DeleteTask_Click" RenderTransformOrigin="1.372,5.347"/>
+    </Grid>
+</Window>
