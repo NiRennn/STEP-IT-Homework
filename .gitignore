@@ -12,7 +12,7 @@ cmake-build-debug
 
 *.idea
 *.vcxproj
-
+appsettings.json
 
 # User-specific files
 *.rsuser
