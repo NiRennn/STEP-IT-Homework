@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="TrendyolApp.View.OrdersUCView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TrendyolApp.View"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="784" d:DesignWidth="923"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Grid>
+        <Border Margin="40">
+            <ItemsControl ItemsSource="{Binding Orders}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="10">
+                            <TextBlock Text="{Binding Id}" 
+                                       FontWeight="Bold"
+                                       FontSize="24"
+                                       HorizontalAlignment="Left"
+                                       Margin="0,0,10,0"/>
+                            <TextBlock Text="{Binding Product.ProductName}"
+                                       FontSize="24"
+                                       HorizontalAlignment="Center"
+                                       Margin="10,0,10,0"/>
+                            <TextBlock Text="{Binding Status}" 
+                                       Foreground="Green"
+                                       FontSize="24"
+                                       HorizontalAlignment="Right"
+                                       />
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Border>
+    </Grid>
+</UserControl>

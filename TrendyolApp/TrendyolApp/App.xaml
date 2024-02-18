@@ -1,0 +1,62 @@
+﻿<Application x:Class="TrendyolApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TrendyolApp"
+             xmlns:view="clr-namespace:TrendyolApp.View"
+             xmlns:viewModel="clr-namespace:TrendyolApp.ViewModel">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+                <view:LoginUCView/>
+        </DataTemplate> 
+            
+            <DataTemplate DataType="{x:Type viewModel:MainWindowViewModel}">
+                <view:MainWindow/>
+        </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:RegistrationViewModel}">
+                <view:RegistrationUCView/>
+        </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:AccountViewModel}">
+                <view:AccountWindow/>
+        </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:AccountInfoViewModel}">
+                <view:AccountInfoUCView/>
+        </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:AdvertisingViewModel}">
+                <view:AdvertisingUCView/>
+        </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ForgotPasswordViewModel}">
+                <view:ForgotPasswordUCView/>
+        </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:BalanceViewModel}">
+                <view:BalanceUCView/>
+        </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ShopViewModel}">
+                <view:ShopUCView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:OrdersViewModel}">
+                <view:OrdersUCView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:SuperAdminViewModel}">
+                <view:SuperAdminWindow/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:AdminViewModel}">
+                <view:AdminWindow/>
+        </DataTemplate>
+
+
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

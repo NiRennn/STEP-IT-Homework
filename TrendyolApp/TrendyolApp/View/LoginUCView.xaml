@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="TrendyolApp.View.LoginUCView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TrendyolApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="400">
+    <Grid>
+
+        <StackPanel Orientation="Vertical"
+                 Margin="20">
+            <TextBlock Text="Login" 
+                    FontSize="29"
+                    Margin="20"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    FontWeight="Bold"
+                    Padding="10"
+                    />
+            <Grid VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="User Name" 
+                FontSize="16"
+                Grid.Row="0"
+                Margin="0,15"
+                HorizontalAlignment="Left"/>
+                <TextBox  Grid.Column="1"
+                x:Name="usernameTextBox"
+                Text="{Binding TextBox1}"
+                Grid.Row="1"
+                Padding="0,5"
+                Width="360"
+                BorderThickness="0,0,0,1"
+                HorizontalAlignment="Left"/>
+                <TextBlock Text="Password" 
+                FontSize="16"
+                Grid.Row="2"
+                Margin="0,15"
+                HorizontalAlignment="Left"/>
+                <TextBox Grid.Row="3"
+                x:Name="passwordTextBox"
+                Text="{Binding TextBox2}"
+                Padding="0,5"                           
+                Width="360"
+                BorderThickness="0,0,0,1"
+                HorizontalAlignment="Left"/>
+            </Grid>
+            <Button Content="Forgot password?" 
+                 Command="{Binding ForgotPassword}"
+                 HorizontalAlignment="Right"
+                 BorderThickness="0"
+                 Background="Transparent"
+                 />
+            <Button x:Name="LoginBtn" 
+                 Content="Login" 
+                 Foreground="White"
+                 Background="Black"
+                 Margin="0,25"
+                 Height="35"
+                 Width="250"
+                 Command="{Binding CompleteLogin}"
+                 >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="LoginBorder" Background="{TemplateBinding Background}" CornerRadius="15">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Registration"
+                 Command="{Binding DoRegistration}"
+                 CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                 Margin="0,5"
+                 BorderThickness="0"
+                 Background="Transparent"
+                 VerticalAlignment="Bottom"
+                 HorizontalAlignment="Center"/>
+
+        </StackPanel>
+
+    </Grid>
+</UserControl>
