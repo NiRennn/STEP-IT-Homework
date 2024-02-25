@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:TrendyolApp.View"
         mc:Ignorable="d"
         Title="AdminWindow" Height="550" Width="800"
-        Background="Gray"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         Icon="C:\STEP IT Homework\TrendyolApp\TrendyolApp\Icons\TrendyolIcon.png"
         >
@@ -31,13 +30,30 @@
                 <DataGridTextColumn Header="Status" FontSize="18" Binding="{Binding Status}" Width="200"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Change Status"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                BorderBrush="Black"
-                Margin="0,455,0,0" Height="50"
-                Command="{Binding ChangeStatusCommand}"
-                CommandParameter="{Binding ElementName=OrdersDataGrid, Path=SelectedItem}"
-                />
+        
+        <Button x:Name="RegistrationBtn"
+            Content="Add to Balance" 
+            FontSize="24"
+            Foreground="White"
+            Background="Black"
+            Margin="280,455,280,9"
+            Command="{Binding ChangeStatusCommand}"
+            CommandParameter="{Binding ElementName=OrdersDataGrid, Path=SelectedItem}"
+            Height="60"
+            Width="200">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="LoginBorder" Background="{TemplateBinding Background}" CornerRadius="15">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
     </Grid>
 </Window>
