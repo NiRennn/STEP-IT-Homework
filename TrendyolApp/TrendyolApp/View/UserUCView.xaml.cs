@@ -12,18 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TrendyolApp.ViewModel;
 
 namespace TrendyolApp.View
 {
 
-    public partial class OrdersUCView : UserControl
+    public partial class UserUCView : UserControl
     {
-        public OrdersUCView()
+        public UserUCView()
         {
             InitializeComponent();
         }
-
-
     }
 }

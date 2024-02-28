@@ -9,7 +9,7 @@ using TrendyolApp.Messages;
 
 namespace TrendyolApp.ViewModel
 {
-     class MainWindowViewModel : ViewModelBase
+    class MainWindowViewModel : ViewModelBase
     {
         private ViewModelBase _currentView;
         public ViewModelBase CurrentView
@@ -30,7 +30,5 @@ namespace TrendyolApp.ViewModel
                 CurrentView = message.ViewModelType;
             });
         }
-
-
     }
 }

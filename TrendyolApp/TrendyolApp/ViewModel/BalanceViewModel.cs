@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using TrendyolApp.Model;
+using TrendyolApp.Service.Interfaces;
+
 
 namespace TrendyolApp.ViewModel
 {
@@ -14,6 +17,8 @@ namespace TrendyolApp.ViewModel
     {
 
         private readonly CurrentUser _currentUser;
+        private readonly Service.Interfaces.INavigationService navigationService;
+
         TrendyolDbContext _trendyoulDB = new TrendyolDbContext();
 
         private string AddToBalanceTextBox;
@@ -30,9 +35,11 @@ namespace TrendyolApp.ViewModel
                 }
             }
         }
-        public BalanceViewModel(CurrentUser currentUser)
+        public BalanceViewModel(CurrentUser currentUser, Service.Interfaces.INavigationService navigation)
         {
             _currentUser = currentUser;
+            navigationService = navigation;
+
         }
 
 
@@ -61,6 +68,14 @@ namespace TrendyolApp.ViewModel
                     MessageBox.Show("Incorrect value for replenishing the balance.");
                 }
                 TextBox1 = string.Empty;
+            });
+        }
+
+        public RelayCommand BackToUserIntarface
+        {
+            get => new(() =>
+            {
+                navigationService.NavigateTo<UserUCViewModel>();
             });
         }
 

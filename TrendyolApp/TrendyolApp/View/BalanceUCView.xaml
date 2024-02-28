@@ -9,47 +9,60 @@
              d:DesignHeight="784" d:DesignWidth="923">
     <Grid>
 
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0">
-                <TextBlock Text="Balance:" Foreground="Gray" FontSize="40" Width="170" Margin="292,123,461,73" />
-                <TextBlock Text="{Binding BalanceInfo}" FontSize="40" Width="200" TextAlignment="Center" Foreground="Black" Margin="462,123,261,73"/>
+        <Grid Grid.Column="0">
+            <Button Width="50" Height="784" HorizontalAlignment="Left" Command="{Binding BackToUserIntarface}" Background="#FF6720" BorderThickness="0">
+                <Image Source="C:\STEP IT Homework\TrendyolApp\TrendyolApp\Icons\ArrowMenu.png"/>
+            </Button>
         </Grid>
 
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock Text="Balance:" Foreground="Gray" FontSize="40" Margin="292,123,393,73" />
+                <TextBlock Text="{Binding BalanceInfo}" FontSize="40" Width="200" TextAlignment="Center" Foreground="Black" Margin="436,123,237,73"/>
+            </Grid>
 
-        <Grid Grid.Row="1">
-            <TextBox
+
+            <Grid Grid.Row="1">
+                <TextBox
            x:Name="AddToBalanceTextBox"
            FontSize="30"
            TextAlignment="Center"
            Text="{Binding TextBox1}"
-           BorderThickness="0,0,0,1" Margin="337,102,336,116"
+           BorderThickness="0,0,0,1" Margin="317,109,286,109"
             />
-            <Button x:Name="RegistrationBtn" Command="{Binding AddToBalance}"
+                <Button x:Name="RegistrationBtn" Command="{Binding AddToBalance}"
            Content="Add to Balance" 
            FontSize="32"
            Foreground="White"
            Background="Black"
-           Margin="337,176,336,26"
+           Margin="327,173,296,29"
            Width="250">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border x:Name="LoginBorder" Background="{TemplateBinding Background}" CornerRadius="15">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </Button.Style>
-            </Button>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="LoginBorder" Background="{TemplateBinding Background}" CornerRadius="15">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Grid>
         </Grid>
+
     </Grid>
 </UserControl>

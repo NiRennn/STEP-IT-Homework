@@ -16,7 +16,7 @@ namespace TrendyolApp.ViewModel
     public class ShopViewModel : ViewModelBase
     {
 
-        private readonly INavigationService _navigationService;
+        private readonly INavigationService navigationService;
         private readonly CurrentUser _currentUser;
 
 
@@ -24,9 +24,9 @@ namespace TrendyolApp.ViewModel
         TrendyolDbContext _trendyoulDB = new TrendyolDbContext();
 
 
-        public ShopViewModel(INavigationService navigationService, CurrentUser currentUser)
+        public ShopViewModel(INavigationService navigation, CurrentUser currentUser)
         {
-            _navigationService = navigationService;
+            navigationService = navigation;
             _currentUser = currentUser;
 
 
@@ -34,8 +34,10 @@ namespace TrendyolApp.ViewModel
 
 
 
-        public void BuyProduct(int productId,double productPrice)
+        public void BuyProduct(int productId, double productPrice)
         {
+            try
+            {
             if (productPrice > _currentUser.Balance)
             {
                 MessageBox.Show("Not enough money on balance.");
@@ -67,7 +69,22 @@ namespace TrendyolApp.ViewModel
 
                 MessageBox.Show("Product added to your orders!");
             }
-                
+        }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while processing your request: {ex.Message}");
+
+            }
+
+        }
+
+
+        public RelayCommand BackToUserIntarface
+        {
+            get => new(() =>
+            {
+                navigationService.NavigateTo<UserUCViewModel>();
+            });
         }
 
 

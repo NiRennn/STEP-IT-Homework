@@ -10,14 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace TrendyolApp.View
 {
-
-    public partial class AccountWindow : Window
+    /// <summary>
+    /// Interaction logic for AdminUCView.xaml
+    /// </summary>
+    public partial class AdminUCView : UserControl
     {
-        public AccountWindow()
+        public AdminUCView()
         {
             InitializeComponent();
         }

@@ -16,7 +16,7 @@ namespace TrendyolApp
     public partial class App : Application
     {
         public static Container Container { get; set; } = new Container();
-        public static MainWindow window = new();
+        public static MainWindowView window = new();
 
 
         public void Register()
@@ -24,11 +24,13 @@ namespace TrendyolApp
             Container.RegisterSingleton<IMessenger, Messenger>();
             Container.RegisterSingleton<IDataService, DataService>();
             Container.RegisterSingleton<INavigationService, TrendyolApp.Service.NavigationService>();
+            Container.RegisterSingleton<MainWindowViewModel>();
+
 
             Container.RegisterSingleton<CurrentUser>();
 
+
             Container.RegisterSingleton<LoginViewModel>();
-            Container.RegisterSingleton<MainWindowViewModel>();
             Container.RegisterSingleton<RegistrationViewModel>();
             Container.RegisterSingleton<AccountViewModel>();
             Container.RegisterSingleton<AccountInfoViewModel>();
@@ -39,6 +41,8 @@ namespace TrendyolApp
             Container.RegisterSingleton<OrdersViewModel>();
             Container.RegisterSingleton<SuperAdminViewModel>();
             Container.RegisterSingleton<AdminViewModel>();
+            Container.RegisterSingleton<UserUCViewModel>();
+
 
             Container.Verify();
         }

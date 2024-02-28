@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="TrendyolApp.View.UserUCView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TrendyolApp.View"
+            xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1200">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Background="#F26726">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="2*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" >
+                    <Button Grid.Row="0" Command="{Binding GoToAdvertising}" BorderThickness="0">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="BorderBrush" Value="Transparent"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <ContentPresenter/>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                        <Image Source="C:\STEP IT Homework\TrendyolApp\TrendyolApp\Icons\TopBanner.png" Stretch="Fill"/>
+                    </Button>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Button BorderBrush="Transparent" BorderThickness="0" Background="Transparent" Command="{Binding GoToShop}">
+                        <StackPanel Orientation="Horizontal">
+                            <md:PackIcon Kind="Shop" Height="30" Width="30"/>
+                            <TextBlock Text="Shop" FontSize="20"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Button BorderBrush="Transparent" BorderThickness="0" Background="Transparent" Command="{Binding GoToOrders}">
+                        <StackPanel Orientation="Horizontal" >
+                            <md:PackIcon Kind="OrderBoolAscending" Height="30" Width="30"/>
+                            <TextBlock Text="Orders" FontSize="20"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Button BorderBrush="Transparent" BorderThickness="0" Background="Transparent" Command="{Binding GoToAccountInfo}">
+                        <StackPanel Orientation="Horizontal">
+                            <md:PackIcon Kind="Account" Height="30" Width="30"/>
+                            <TextBlock Text="Account" FontSize="20"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Button BorderBrush="Transparent" BorderThickness="0" Background="Transparent" Command="{Binding GoToBalance}">
+                        <StackPanel Orientation="Horizontal">
+                            <md:PackIcon Kind="AccountBalanceWallet" Height="30" Width="30"/>
+                            <TextBlock Text="Balance" FontSize="20"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+
+                    <Grid Grid.Row="1">
+                        <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Command="{Binding ExitToLogin}">
+                            <md:PackIcon Kind="ExitToApp" Width="40" Height="40"/>
+                        </Button>
+                    </Grid>
+                </Grid>
+
+
+
+            </Grid>
+            <ContentControl Grid.Column="1" Content="{Binding CurrentUserView, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -11,17 +11,10 @@
                 <view:LoginUCView/>
         </DataTemplate> 
             
-            <DataTemplate DataType="{x:Type viewModel:MainWindowViewModel}">
-                <view:MainWindow/>
-        </DataTemplate>
-
             <DataTemplate DataType="{x:Type viewModel:RegistrationViewModel}">
                 <view:RegistrationUCView/>
         </DataTemplate>
 
-            <DataTemplate DataType="{x:Type viewModel:AccountViewModel}">
-                <view:AccountWindow/>
-        </DataTemplate>
 
             <DataTemplate DataType="{x:Type viewModel:AccountInfoViewModel}">
                 <view:AccountInfoUCView/>
@@ -35,9 +28,10 @@
                 <view:ForgotPasswordUCView/>
         </DataTemplate>
 
-            <DataTemplate DataType="{x:Type viewModel:BalanceViewModel}">
-                <view:BalanceUCView/>
+        <DataTemplate DataType="{x:Type viewModel:BalanceViewModel}">
+            <view:BalanceUCView/>
         </DataTemplate>
+            
             <DataTemplate DataType="{x:Type viewModel:ShopViewModel}">
                 <view:ShopUCView/>
         </DataTemplate>
@@ -47,15 +41,29 @@
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type viewModel:SuperAdminViewModel}">
-                <view:SuperAdminWindow/>
+                <view:SuperAdminUCView/>
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type viewModel:AdminViewModel}">
-                <view:AdminWindow/>
+                <view:AdminUCView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:MainWindowViewModel}">
+            <view:MainWindowView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:UserUCViewModel}">
+            <view:UserUCView/>
         </DataTemplate>
 
 
 
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 
     </Application.Resources>

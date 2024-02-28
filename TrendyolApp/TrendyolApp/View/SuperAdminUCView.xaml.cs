@@ -1,5 +1,4 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,23 +11,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TrendyolApp.Model;
 
 namespace TrendyolApp.View
 {
 
-    public partial class SuperAdminWindow : Window
+    public partial class SuperAdminUCView : UserControl
     {
         public RelayCommand<User> MakeAdminCommand { get; private set; }
 
-        public SuperAdminWindow()
+        public SuperAdminUCView()
         {
             InitializeComponent();
             MakeAdminCommand = new RelayCommand<User>(MakeAdmin);
             LoadUsers();
-
-
         }
         private void MakeAdmin(User user)
         {
@@ -50,7 +48,6 @@ namespace TrendyolApp.View
                 }
             }
         }
-
         private void LoadUsers()
         {
             List<User> users;
@@ -61,7 +58,7 @@ namespace TrendyolApp.View
 
             foreach (User user in users)
             {
-                if(user.Position == "User")
+                if (user.Position == "User")
                 {
                     Border border = new Border();
                     border.BorderBrush = Brushes.Black;

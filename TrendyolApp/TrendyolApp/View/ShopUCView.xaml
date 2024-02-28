@@ -11,7 +11,11 @@
     
     
     <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Button Width="50" Height="784" HorizontalAlignment="Left" Command="{Binding BackToUserIntarface}" Background="#FF6720" BorderThickness="0">
+            <Image Source="C:\STEP IT Homework\TrendyolApp\TrendyolApp\Icons\ArrowMenu.png"/>
+        </Button>
+        
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="70,10,10,10">
             <WrapPanel x:Name="WrapPanel">
                 
             </WrapPanel>

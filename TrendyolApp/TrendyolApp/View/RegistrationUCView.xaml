@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:TrendyolApp.View"
              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="550" d:DesignWidth="400"
+             d:DesignHeight="800" d:DesignWidth="1200"
              >
 
     <UserControl.Resources>
@@ -20,177 +20,201 @@
     </UserControl.Resources>
 
     <Grid>
-        <Button 
+
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\STEP IT Homework\TrendyolApp\TrendyolApp\Icons\trendyol.png"/>
+
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid Grid.Column="1">
+
+            <Button 
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Width="60"
                 Height="30"
-                Margin="10"
+                Margin="198,82,0,0"
                 BorderThickness="0"
                 Background="Transparent"
+                Foreground="Black"
                 Command="{Binding BackToLogin}"
                 >
-            <md:PackIcon Kind="ArrowBack"></md:PackIcon>
+                <md:PackIcon Kind="ArrowBack"></md:PackIcon>
 
-        </Button>
-        <StackPanel Orientation="Vertical" Margin="10">
-            <TextBlock Text="Registration"
-                    FontSize="25"
+            </Button>
+            <StackPanel Orientation="Vertical" Margin="190,112,107,150">
+                <TextBlock Text="Registration"
+                    FontSize="34"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top"
                     FontWeight="Bold"
                     Padding="10"/>
 
 
-            <Grid VerticalAlignment="Center">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
+                <Grid VerticalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
 
-                <TextBlock Text="User Name" 
+                    <TextBlock Text="Username" 
                 Grid.Row="0"
-                FontSize="15"
-                Margin="0,15"
+                FontSize="18"
+                Margin="2,15"
+                FontFamily="Montserrat"
+                FontWeight="Medium"
                 HorizontalAlignment="Left"/>
-                <md:PackIcon Kind="QuestionMarkCircleOutline" Height="18" Width="18"
-                 Margin="95,19,0,0">
-                    <md:PackIcon.ToolTip>
-                        <ToolTip  Style="{StaticResource MyToolTipStyle}">
-                            <TextBlock TextWrapping="Wrap" Text="Length from 3 to 16 characters.Can only contain letters of the Latin alphabet, numbers and underscores. Must not begin with a number or underscore." 
+                    <md:PackIcon Kind="QuestionMarkCircleOutline" Height="18" Width="18"
+                 Margin="276,13,0,0" Grid.RowSpan="2" Grid.Row="1">
+                        <md:PackIcon.ToolTip>
+                            <ToolTip  Style="{StaticResource MyToolTipStyle}">
+                                <TextBlock TextWrapping="Wrap" Text="Length from 3 to 16 characters.Can only contain letters of the Latin alphabet, numbers and underscores. Must not begin with a number or underscore." 
                            Width="180"
                            Height="100"
                            Foreground="Black"
                            FontSize="12"
                            Padding="5"/>
-                        </ToolTip>
-                    </md:PackIcon.ToolTip>
-                </md:PackIcon>
-                <TextBox  Grid.Column="1"
+                            </ToolTip>
+                        </md:PackIcon.ToolTip>
+                    </md:PackIcon>
+                    <TextBox
                 x:Name="UsernameTextBox"
                 Text="{Binding TextBox1}"
                 Grid.Row="1"
                 Padding="0,5"
-                Width="360"
+                Width="264"
                 BorderThickness="0,0,0,1"
-                HorizontalAlignment="Left"/>
+                HorizontalAlignment="Left" Margin="0,0,0,54" Grid.RowSpan="2"/>
 
-                <TextBlock Text="E-mail" 
+                    <TextBlock Text="E-mail" 
                 Grid.Row="2"
-                Margin="0,15"
-                FontSize="15"
+                Margin="2,15"
+                FontSize="18"
+                FontFamily="Montserrat"
+                FontWeight="Medium"
                 HorizontalAlignment="Left"/>
-                <md:PackIcon Kind="QuestionMarkCircleOutline" Margin="60,0,0,0" Grid.Row="2" VerticalAlignment="Center">
-                    <md:PackIcon.ToolTip>
-                        <ToolTip Style="{StaticResource MyToolTipStyle}">
-                            <TextBlock Text="Enter your email address." 
+                    <md:PackIcon Kind="QuestionMarkCircleOutline" Margin="277,13,0,0" Grid.Row="3" Grid.RowSpan="2">
+                        <md:PackIcon.ToolTip>
+                            <ToolTip Style="{StaticResource MyToolTipStyle}">
+                                <TextBlock Text="Enter your email address." 
                            Foreground="Black"
                            FontSize="12"
                            Padding="5"/>
-                        </ToolTip>
-                    </md:PackIcon.ToolTip>
-                </md:PackIcon>
-                <TextBox  Grid.Column="1"
+                            </ToolTip>
+                        </md:PackIcon.ToolTip>
+                    </md:PackIcon>
+                    <TextBox
                 x:Name="EmailTextBox"
                 Text="{Binding TextBox2}"
                 Grid.Row="3"
                 Padding="0,5"
-                Width="360"
+                Width="267"
                 BorderThickness="0,0,0,1"
-                HorizontalAlignment="Left"
+                HorizontalAlignment="Left" Margin="4,0,0,54" Grid.RowSpan="2"
                 />
 
-                <TextBlock Text="Password" 
+                    <TextBlock Text="Password" 
                 Grid.Row="4"
-                Margin="0,15"
-                FontSize="15"
+                Margin="2,15"
+                FontSize="18"
+                FontFamily="Montserrat"
+                FontWeight="Medium"
                 HorizontalAlignment="Left"/>
-                <md:PackIcon Kind="QuestionMarkCircleOutline" Margin="88,0,0,0" VerticalAlignment="Center" Grid.Row="4">
-                    <md:PackIcon.ToolTip>
-                        <ToolTip Style="{StaticResource MyToolTipStyle}">
-                            <TextBlock TextWrapping="Wrap" Text="Length from 8 to 20 characters.Must contain at least one uppercase and lowercase letter.Must contain at least one digit.Special characters are allowed." 
+                    <md:PackIcon Kind="QuestionMarkCircleOutline" Margin="277,11,0,0" Grid.Row="5" Grid.RowSpan="2">
+                        <md:PackIcon.ToolTip>
+                            <ToolTip Style="{StaticResource MyToolTipStyle}">
+                                <TextBlock TextWrapping="Wrap" Text="Length from 8 to 20 characters.Must contain at least one uppercase and lowercase letter.Must contain at least one digit.Special characters are allowed." 
                            Width="180"
                            Height="110"
                            Foreground="Black"
                            FontSize="12"
                            Padding="5"/>
-                        </ToolTip>
-                    </md:PackIcon.ToolTip>
-                </md:PackIcon>
-                <TextBox  Grid.Column="1"
+                            </ToolTip>
+                        </md:PackIcon.ToolTip>
+                    </md:PackIcon>
+                    <TextBox
                 x:Name="PasswordTextBox"
                 Text="{Binding TextBox3}"
                 Grid.Row="5"
                 Padding="0,5"
-                Width="360"
+                Width="267"
                 BorderThickness="0,0,0,1"
-                HorizontalAlignment="Left"
+                HorizontalAlignment="Left" Margin="4,0,0,54" Grid.RowSpan="2"
                 />
 
-                <TextBlock Text="Confirm Password" 
+                    <TextBlock Text="Confirm Password" 
                 Grid.Row="6"
-                Margin="0,15"
-                FontSize="15"
+                Margin="2,15"
+                FontSize="18"
+                FontFamily="Montserrat"
+                FontWeight="Medium"
                 HorizontalAlignment="Left"/>
-                <md:PackIcon Kind="QuestionMarkCircleOutline" Margin="140,0,0,0" Grid.Row="6" VerticalAlignment="Center">
-                    <md:PackIcon.ToolTip>
-                        <ToolTip Style="{StaticResource MyToolTipStyle}">
-                            <TextBlock Text="Confirm your password." 
+                    <md:PackIcon Kind="QuestionMarkCircleOutline" Margin="277,11,0,0" Grid.Row="7" Grid.RowSpan="2">
+                        <md:PackIcon.ToolTip>
+                            <ToolTip Style="{StaticResource MyToolTipStyle}">
+                                <TextBlock Text="Confirm your password." 
                            Foreground="Black"
                            FontSize="12"
                            Padding="5"/>
-                        </ToolTip>
-                    </md:PackIcon.ToolTip>
-                </md:PackIcon>
-                <TextBox  Grid.Column="1"
+                            </ToolTip>
+                        </md:PackIcon.ToolTip>
+                    </md:PackIcon>
+                    <TextBox
                 x:Name="PasswordConfirmTextBox"
                 Text="{Binding TextBox4}"
                 Grid.Row="7"
                 Padding="0,5"
-                Width="360"
+                Width="267"
                 BorderThickness="0,0,0,1"
-                HorizontalAlignment="Left"
+                HorizontalAlignment="Left" Margin="4,0,0,54" Grid.RowSpan="2"
                 />
-                <TextBlock Text="Secret Word" 
+                    <TextBlock Text="Secret Word" 
                 Grid.Row="8"
-                Margin="0,15"
-                FontSize="15"
+                Margin="2,15"
+                FontSize="18"
+                FontFamily="Montserrat"
+                FontWeight="Medium"
                 HorizontalAlignment="Left"/>
-                <md:PackIcon Kind="QuestionMarkCircleOutline" 
-                             Margin="132,0,0,0" 
-                             Grid.Row="8" 
-                             VerticalAlignment="Center">
-                    <md:PackIcon.ToolTip>
-                        <ToolTip Style="{StaticResource MyToolTipStyle}">
-                            <TextBlock TextWrapping="Wrap" Text="Length from 5 to 20 characters.May contain letters of the Latin alphabet, numbers and spaces.Must not start or end with a space." 
+                    <md:PackIcon Kind="QuestionMarkCircleOutline" 
+                             Margin="277,0,0,0" 
+                             Grid.Row="9" VerticalAlignment="Center">
+                        <md:PackIcon.ToolTip>
+                            <ToolTip Style="{StaticResource MyToolTipStyle}">
+                                <TextBlock TextWrapping="Wrap" Text="Length from 5 to 20 characters.May contain letters of the Latin alphabet, numbers and spaces.Must not start or end with a space." 
                            Width="180"
                            Height="85"
                            Foreground="Black"
                            FontSize="12"
                            Padding="5"/>
-                        </ToolTip>
-                    </md:PackIcon.ToolTip>
-                </md:PackIcon>
-                <TextBox  Grid.Column="1"
+                            </ToolTip>
+                        </md:PackIcon.ToolTip>
+                    </md:PackIcon>
+                    <TextBox
                 x:Name="SecretWordTextBox"
                 Text="{Binding TextBox5}"
                 Grid.Row="9"
                 Padding="0,5"
-                Width="360"
+                Width="267"
                 BorderThickness="0,0,0,1"
-                HorizontalAlignment="Left"
+                HorizontalAlignment="Left" Margin="4,0,0,0"
                 />
 
-            </Grid>
-            <Button x:Name="RegistrationBtn" Command="{Binding CompleteRegistration}"
+                </Grid>
+                <Button x:Name="RegistrationBtn" Command="{Binding CompleteRegistration}"
                 Content="Registration" 
                 Foreground="White"
                 Background="Black"
@@ -198,20 +222,22 @@
                 Height="35"
                 Width="250"
      >
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border x:Name="LoginBorder" Background="{TemplateBinding Background}" CornerRadius="15">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </Button.Style>
-            </Button>
-        </StackPanel>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="LoginBorder" Background="{TemplateBinding Background}" CornerRadius="15">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </StackPanel>
+        </Grid>
+
     </Grid>
 </UserControl>

@@ -27,13 +27,7 @@ namespace TrendyolApp.ViewModel
             _messenger = messenger;
         }
 
-        public RelayCommand MakeUserAdmin
-        {
-            get => new(() =>
-            {
-                navigationService.NavigateTo<RegistrationViewModel>();
-            });
-        }
+
        
     }
 }

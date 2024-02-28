@@ -4,11 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TrendyolApp.View"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+
              mc:Ignorable="d" 
              d:DesignHeight="784" d:DesignWidth="923">
     <Grid>
 
-        <StackPanel Orientation="Vertical">
+        <Button Width="50" Height="784" HorizontalAlignment="Left" Command="{Binding BackToUserIntarface}" Background="#FF6720" BorderThickness="0">
+            <Image Source="C:\STEP IT Homework\TrendyolApp\TrendyolApp\Icons\ArrowMenu.png"/>
+        </Button>
+        
+        <StackPanel Orientation="Vertical" Width="870" HorizontalAlignment="Right">
             <TextBlock Text="Account Info"
                        HorizontalAlignment="Center"
                        FontSize="40"

@@ -84,23 +84,12 @@ namespace TrendyolApp.ViewModel
                     {
                         if(user.Position == "SuperAdmin")
                         {
-                            SuperAdminWindow newSuperAdminWindow = new SuperAdminWindow();
-                            newSuperAdminWindow.DataContext = App.Container.GetInstance<SuperAdminViewModel>();
                             navigationService.NavigateTo<SuperAdminViewModel>();
 
-                            App.window.Close();
-
-                            newSuperAdminWindow.ShowDialog();
                         }
                         else if(user.Position == "Admin")
                         {
-                            AdminWindow newAdminWindow = new AdminWindow();
-                            newAdminWindow.DataContext = App.Container.GetInstance<AdminViewModel>();
                             navigationService.NavigateTo<AdminViewModel>();
-
-                            App.window.Close();
-
-                            newAdminWindow.ShowDialog();
                         }
                         else 
                         {
@@ -110,13 +99,8 @@ namespace TrendyolApp.ViewModel
                             _currentUser.Balance = user.Balance;
                             _currentUser.Position = user.Position;
 
-                            AccountWindow newWindow = new AccountWindow();
-                            newWindow.DataContext = App.Container.GetInstance<AccountViewModel>();
-                            navigationService.NavigateTo<ShopViewModel>();
+                            navigationService.NavigateTo<UserUCViewModel>();
 
-                            App.window.Close();
-
-                            newWindow.ShowDialog();
                         }
 
 

@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,15 @@ namespace TrendyolApp.ViewModel
         public string UserNameInfo => _currentUser.UserName;
         public string EmailInfo => _currentUser.Email;
         public string PositionInfo => _currentUser.Position;
+
+
+        public RelayCommand BackToUserIntarface
+        {
+            get => new(() =>
+            {
+                navigationService.NavigateTo<UserUCViewModel>();
+            });
+        }
 
 
     }

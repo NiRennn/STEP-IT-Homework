@@ -9,7 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Icons\ArrowMenu.png" />
+    <None Remove="Icons\MenuArrow.png" />
     <None Remove="Icons\TopBanner.png" />
+    <None Remove="Icons\trendyol.png" />
     <None Remove="Icons\TrendyolIcon.png" />
     <None Remove="ProductsImages\Airpods Pro Max.jpg" />
     <None Remove="ProductsImages\Apple Keyboard.jpg" />
@@ -23,7 +26,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Icons\ArrowMenu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\MenuArrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icons\TopBanner.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\trendyol.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Icons\TrendyolIcon.png">

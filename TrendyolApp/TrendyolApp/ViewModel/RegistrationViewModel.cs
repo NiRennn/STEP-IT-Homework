@@ -148,13 +148,9 @@ namespace TrendyolApp.ViewModel
                     _currentUser.Position = newUser.Position;
 
 
-                    AccountWindow newWindow = new AccountWindow();
-                    newWindow.DataContext = App.Container.GetInstance<AccountViewModel>();
                     navigationService.NavigateTo<ShopViewModel>();
 
-                    App.window.Close();
 
-                    newWindow.ShowDialog();
                 }
                 else
                     return;
