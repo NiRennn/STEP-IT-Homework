@@ -30,8 +30,11 @@ namespace TrendyolApp.ViewModel
             _currentUser = currentUser;
 
 
+
+
         }
 
+        
 
 
         public void BuyProduct(int productId, double productPrice)
@@ -40,7 +43,7 @@ namespace TrendyolApp.ViewModel
             {
             if (productPrice > _currentUser.Balance)
             {
-                MessageBox.Show("Not enough money on balance.");
+                MessageBox.Show("Deneg net,idi rabotay.");
             }
             else
             {

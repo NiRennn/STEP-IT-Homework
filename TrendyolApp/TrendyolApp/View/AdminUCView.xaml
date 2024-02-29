@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TrendyolApp.View"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1200">
+             d:DesignHeight="800" d:DesignWidth="1200"
+             Background="Gray">
     <UserControl.Resources>
         <Style x:Key="CustomDataGridStyle" TargetType="DataGrid">
             <Setter Property="Background" Value="LightGray"/>
@@ -16,15 +17,18 @@
     <Grid>
         <DataGrid x:Name="OrdersDataGrid" 
                Background="LightGray" 
-               Style="{StaticResource CustomDataGridStyle}"
                AutoGenerateColumns="False" 
                ItemsSource="{Binding Orders}" 
-               Margin="0,0,0,170">
+               Margin="0,0,0,123">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Order ID"  FontSize="18" Binding="{Binding Id}" Width="55" />
-                <DataGridTextColumn Header="User Name" FontSize="18" Binding="{Binding User.Username}" Width="150"/>
-                <DataGridTextColumn Header="Product Name" FontSize="18" Binding="{Binding Product.ProductName}" Width="400"/>
-                <DataGridTextColumn Header="Status" FontSize="18" Binding="{Binding Status}" Width="200"/>
+                <DataGridTextColumn Header="Order ID"  FontSize="18" Binding="{Binding Id}" Width="100"
+                                    CellStyle="{StaticResource MaterialDesignDataGridCell}"/>
+                <DataGridTextColumn Header="User Name" FontSize="18" Binding="{Binding Users.Username}" Width="200"
+                                    CellStyle="{StaticResource MaterialDesignDataGridCell}"/>
+                <DataGridTextColumn Header="Product Name" FontSize="18" Binding="{Binding Product.ProductName}" Width="500"
+                                    CellStyle="{StaticResource MaterialDesignDataGridCell}"/>
+                <DataGridTextColumn Header="Status" FontSize="18" Binding="{Binding Status}" Width="200"
+                                    CellStyle="{StaticResource MaterialDesignDataGridCell}"/>
             </DataGrid.Columns>
         </DataGrid>
 
@@ -33,12 +37,11 @@
          FontSize="24"
          Foreground="White"
          Background="Black"
-         VerticalAlignment="Bottom"
-         Margin="501"
+         VerticalAlignment="Top"
+         Margin="476,695,476,0"
          Command="{Binding ChangeStatusCommand}"
          CommandParameter="{Binding ElementName=OrdersDataGrid, Path=SelectedItem}"
-         Height="60"
-         Width="200">
+         Height="60">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Template">

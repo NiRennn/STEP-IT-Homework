@@ -78,8 +78,9 @@ namespace TrendyolApp.View
                 buyButton.Background = Brushes.Black;
                 buyButton.Foreground = Brushes.White;
                 buyButton.BorderThickness = new Thickness(0);
-                buyButton.Command = new RelayCommand(() => { App.Container.GetInstance<ShopViewModel>().BuyProduct(product.Id,product.ProductPrice); });
+                buyButton.Command = new RelayCommand(() => { App.Container.GetInstance<ShopViewModel>().BuyProduct(product.Id, product.ProductPrice); });
                 stackPanel.Children.Add(buyButton);
+
 
 
                 border.Child = stackPanel;

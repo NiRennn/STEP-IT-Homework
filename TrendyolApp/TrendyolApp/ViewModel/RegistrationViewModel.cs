@@ -110,11 +110,8 @@ namespace TrendyolApp.ViewModel
         {
             get => new(() =>
             {
-                TextBox1 = String.Empty;
-                TextBox2 = String.Empty;
-                TextBox3 = String.Empty;
-                TextBox4 = String.Empty;
-                TextBox5 = String.Empty;
+
+                ClearTextBoxes();
                 navigationService.NavigateTo<LoginViewModel>();
             });
         }
@@ -148,7 +145,8 @@ namespace TrendyolApp.ViewModel
                     _currentUser.Position = newUser.Position;
 
 
-                    navigationService.NavigateTo<ShopViewModel>();
+                    ClearTextBoxes();
+                    navigationService.NavigateTo<UserUCViewModel>();
 
 
                 }
@@ -160,6 +158,14 @@ namespace TrendyolApp.ViewModel
             });
         }
 
+        public void ClearTextBoxes()
+        {
+            TextBox1 = string.Empty;
+            TextBox2 = string.Empty;
+            TextBox3 = string.Empty;
+            TextBox4 = string.Empty;
+            TextBox5 = string.Empty;
+        }
 
         public bool ValidateUserData(string t1, string t2, string t3, string t4, string t5)
         {

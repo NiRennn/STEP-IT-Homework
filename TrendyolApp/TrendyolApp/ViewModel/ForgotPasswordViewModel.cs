@@ -111,6 +111,11 @@ namespace TrendyolApp.ViewModel
                     _trendyoulDB.SaveChanges();
 
                     MessageBox.Show("The password was successfully changed!");
+                    TextBox1 = string.Empty;
+                    TextBox2 = string.Empty;
+                    TextBox3 = string.Empty;
+                    TextBox4 = string.Empty;
+
                     navigationService.NavigateTo<LoginViewModel>();
                 }
             });

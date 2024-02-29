@@ -22,7 +22,7 @@
     <Grid>
 
         <Grid.Background>
-            <ImageBrush ImageSource="C:\STEP IT Homework\TrendyolApp\TrendyolApp\Icons\trendyol.png"/>
+            <ImageBrush ImageSource="C:\STEP IT Homework\TrendyolApp\TrendyolApp\Icons\trendyol (1).png"/>
 
         </Grid.Background>
 
@@ -48,7 +48,7 @@
                 <md:PackIcon Kind="ArrowBack"></md:PackIcon>
 
             </Button>
-            <StackPanel Orientation="Vertical" Margin="190,112,107,150">
+            <StackPanel Orientation="Vertical" Margin="190,112,107,99">
                 <TextBlock Text="Registration"
                     FontSize="34"
                     HorizontalAlignment="Center"
@@ -79,7 +79,7 @@
                 FontWeight="Medium"
                 HorizontalAlignment="Left"/>
                     <md:PackIcon Kind="QuestionMarkCircleOutline" Height="18" Width="18"
-                 Margin="276,13,0,0" Grid.RowSpan="2" Grid.Row="1">
+                 Margin="276,10,0,0" Grid.RowSpan="2" Grid.Row="1">
                         <md:PackIcon.ToolTip>
                             <ToolTip  Style="{StaticResource MyToolTipStyle}">
                                 <TextBlock TextWrapping="Wrap" Text="Length from 3 to 16 characters.Can only contain letters of the Latin alphabet, numbers and underscores. Must not begin with a number or underscore." 
@@ -96,9 +96,9 @@
                 Text="{Binding TextBox1}"
                 Grid.Row="1"
                 Padding="0,5"
-                Width="264"
+                Width="262"
                 BorderThickness="0,0,0,1"
-                HorizontalAlignment="Left" Margin="0,0,0,54" Grid.RowSpan="2"/>
+                HorizontalAlignment="Left" Margin="2,0,0,54" Grid.RowSpan="2"/>
 
                     <TextBlock Text="E-mail" 
                 Grid.Row="2"
@@ -122,9 +122,9 @@
                 Text="{Binding TextBox2}"
                 Grid.Row="3"
                 Padding="0,5"
-                Width="267"
+                Width="264"
                 BorderThickness="0,0,0,1"
-                HorizontalAlignment="Left" Margin="4,0,0,54" Grid.RowSpan="2"
+                HorizontalAlignment="Left" Margin="7,0,0,54" Grid.RowSpan="2"
                 />
 
                     <TextBlock Text="Password" 
@@ -151,9 +151,9 @@
                 Text="{Binding TextBox3}"
                 Grid.Row="5"
                 Padding="0,5"
-                Width="267"
+                Width="264"
                 BorderThickness="0,0,0,1"
-                HorizontalAlignment="Left" Margin="4,0,0,54" Grid.RowSpan="2"
+                HorizontalAlignment="Left" Margin="7,0,0,54" Grid.RowSpan="2"
                 />
 
                     <TextBlock Text="Confirm Password" 
@@ -176,11 +176,11 @@
                     <TextBox
                 x:Name="PasswordConfirmTextBox"
                 Text="{Binding TextBox4}"
-                Grid.Row="7"
+                Grid.Row="6"
                 Padding="0,5"
-                Width="267"
+                Width="264"
                 BorderThickness="0,0,0,1"
-                HorizontalAlignment="Left" Margin="4,0,0,54" Grid.RowSpan="2"
+                HorizontalAlignment="Left" Margin="7,66,0,54" Grid.RowSpan="3"
                 />
                     <TextBlock Text="Secret Word" 
                 Grid.Row="8"
@@ -190,8 +190,8 @@
                 FontWeight="Medium"
                 HorizontalAlignment="Left"/>
                     <md:PackIcon Kind="QuestionMarkCircleOutline" 
-                             Margin="277,0,0,0" 
-                             Grid.Row="9" VerticalAlignment="Center">
+                             Margin="277,10,0,0" 
+                             Grid.Row="9">
                         <md:PackIcon.ToolTip>
                             <ToolTip Style="{StaticResource MyToolTipStyle}">
                                 <TextBlock TextWrapping="Wrap" Text="Length from 5 to 20 characters.May contain letters of the Latin alphabet, numbers and spaces.Must not start or end with a space." 
@@ -206,11 +206,11 @@
                     <TextBox
                 x:Name="SecretWordTextBox"
                 Text="{Binding TextBox5}"
-                Grid.Row="9"
+                Grid.Row="8"
                 Padding="0,5"
-                Width="267"
+                Width="264"
                 BorderThickness="0,0,0,1"
-                HorizontalAlignment="Left" Margin="4,0,0,0"
+                HorizontalAlignment="Left" Margin="7,66,0,0" Grid.RowSpan="2"
                 />
 
                 </Grid>

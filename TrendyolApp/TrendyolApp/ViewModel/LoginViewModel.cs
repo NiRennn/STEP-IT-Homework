@@ -25,8 +25,11 @@ namespace TrendyolApp.ViewModel
         private readonly INavigationService navigationService;
         private readonly IDataService _dataService;
         private readonly IMessenger _messenger;
+        public readonly OrdersViewModel _orderViewModel;
 
         private  CurrentUser _currentUser;
+
+
 
         TrendyolDbContext _trendyoulDB = new TrendyolDbContext();
 
@@ -57,12 +60,14 @@ namespace TrendyolApp.ViewModel
                 }
             }
         }
-        public LoginViewModel(IMessenger messenger,IDataService dataService,INavigationService navigation,CurrentUser currentUser)
+        public LoginViewModel(IMessenger messenger,IDataService dataService,INavigationService navigation,CurrentUser currentUser, OrdersViewModel ordersViewModel )
         {
             navigationService = navigation;
             _dataService = dataService;
             _messenger = messenger;
             _currentUser = currentUser;
+            _orderViewModel = ordersViewModel;
+
         }
         public RelayCommand DoRegistration
         {
@@ -84,6 +89,8 @@ namespace TrendyolApp.ViewModel
                     {
                         if(user.Position == "SuperAdmin")
                         {
+
+
                             navigationService.NavigateTo<SuperAdminViewModel>();
 
                         }
@@ -98,10 +105,15 @@ namespace TrendyolApp.ViewModel
                             _currentUser.Email = user.Email;
                             _currentUser.Balance = user.Balance;
                             _currentUser.Position = user.Position;
+                            _orderViewModel.LoadOrders();
+
+
 
                             navigationService.NavigateTo<UserUCViewModel>();
 
                         }
+                        TextBox1 = string.Empty;
+                        TextBox2 = string.Empty;
 
 
                     }    

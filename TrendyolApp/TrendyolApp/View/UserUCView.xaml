@@ -83,14 +83,16 @@
 
 
                     <Grid Grid.Row="1">
-                        <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Command="{Binding ExitToLogin}">
-                            <md:PackIcon Kind="ExitToApp" Width="40" Height="40"/>
-                        </Button>
+                        <Button Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Command="{Binding ExitToLogin}" Margin="0,30,0,37" />
+                        <md:PackIcon Kind="ExitToApp" Width="40" Height="40" HorizontalAlignment="Center" Margin="0,4,0,0" Foreground="White"/>
                     </Grid>
                 </Grid>
 
 
 
+            </Grid>
+            <Grid Grid.Column="1">
+                <Image Source="C:\STEP IT Homework\TrendyolApp\TrendyolApp\ProductsImages\Image.jpg" Stretch="Fill"/>
             </Grid>
             <ContentControl Grid.Column="1" Content="{Binding CurrentUserView, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>

@@ -9,7 +9,7 @@
     <Grid>
 
         <Grid.Background>
-            <ImageBrush ImageSource="C:\STEP IT Homework\TrendyolApp\TrendyolApp\Icons\trendyol.png"/>
+            <ImageBrush ImageSource="C:\STEP IT Homework\TrendyolApp\TrendyolApp\Icons\trendyol (1).png"/>
 
         </Grid.Background>
 
@@ -81,7 +81,8 @@
                  HorizontalAlignment="Right"
                  BorderThickness="0"
                  Background="Transparent"
-                 Foreground="DarkGray"
+                 Foreground="Black"
+                 Opacity="1"
                  />
                 <Button x:Name="LoginBtn" 
                  Content="Login" 
@@ -114,7 +115,8 @@
                  Background="Transparent"
                  VerticalAlignment="Bottom"
                  HorizontalAlignment="Center"
-                 Foreground="DarkGray"
+                 Foreground="Black"
+                 Opacity="1"
                     />
 
             </StackPanel>

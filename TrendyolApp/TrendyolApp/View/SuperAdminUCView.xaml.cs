@@ -40,7 +40,12 @@ namespace TrendyolApp.View
 
                     context.SaveChanges();
                     MessageBox.Show("The position has been successfully changed");
-
+                    var borderToRemove = WrapPanel.Children.OfType<Border>()
+                         .FirstOrDefault(b => b.DataContext == user);
+                    if (borderToRemove != null)
+                    {
+                        WrapPanel.Children.Remove(borderToRemove);
+                    }
                 }
                 else
                 {
@@ -66,8 +71,8 @@ namespace TrendyolApp.View
                     border.CornerRadius = new CornerRadius(5);
                     border.Margin = new Thickness(5);
                     border.Padding = new Thickness(5);
-                    border.Width = 150;
-                    border.Height = 150;
+                    border.Width = 220;
+                    border.Height = 180;
 
                     StackPanel stackPanel = new StackPanel();
 
@@ -81,7 +86,7 @@ namespace TrendyolApp.View
                     stackPanel.Children.Add(image);
 
                     TextBlock nameTextBlock = new TextBlock();
-                    nameTextBlock.FontSize = 14;
+                    nameTextBlock.FontSize = 20;
                     nameTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
                     nameTextBlock.Text = user.Username;
                     nameTextBlock.FontWeight = FontWeights.Bold;
@@ -90,8 +95,8 @@ namespace TrendyolApp.View
 
                     Button makeAdminButton = new Button();
                     makeAdminButton.Content = "Make Admin";
-                    makeAdminButton.Width = 90;
-                    makeAdminButton.Height = 30;
+                    makeAdminButton.Width = 150;
+                    makeAdminButton.Height = 40;
                     makeAdminButton.Background = Brushes.Black;
                     makeAdminButton.Foreground = Brushes.White;
                     makeAdminButton.BorderThickness = new Thickness(0);

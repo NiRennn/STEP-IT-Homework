@@ -25,26 +25,18 @@ namespace TrendyolApp.ViewModel
         {
             navigationService = navigation;
             currentUser = user;
-            LoadOrders();
 
         }
 
 
 
-        private void LoadOrders()
+        public void LoadOrders()
         {
-            Orders = new ObservableCollection<Orders>();
+            
 
             using (var context = new TrendyolDbContext())
             {
-                var ordersFromDb = context.Orders.Include(o => o.Product)
-                    .Where(o=> o.UserId == currentUser.Id)
-                    .ToList();
-
-                foreach (var order in ordersFromDb)
-                {
-                    Orders.Add(order);
-                }
+                Orders = new ObservableCollection<Orders>(context.Orders.Include(o => o.Product).Where(o => o.UserId == currentUser.Id));
             }
 
         }

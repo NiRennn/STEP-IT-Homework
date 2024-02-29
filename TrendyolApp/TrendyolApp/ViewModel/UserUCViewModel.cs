@@ -82,5 +82,12 @@ namespace TrendyolApp.ViewModel
                 navigationService.NavigateTo<OrdersViewModel>();
             });
         }
+        public RelayCommand ExitToLogin
+        {
+            get => new(() =>
+            {
+                navigationService.NavigateTo<LoginViewModel>();
+            });
+        }
     }
 }
