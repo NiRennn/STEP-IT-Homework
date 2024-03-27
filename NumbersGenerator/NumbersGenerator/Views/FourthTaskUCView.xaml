@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="NumbersGenerator.Views.FourthTaskUCView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NumbersGenerator.Views"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="650">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="250"/>
+        </Grid.RowDefinitions>
+
+
+
+        <Grid Grid.Row="0">
+            <TextBlock Text="Prime and FIbonacci Nubmers" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Lower Bound:" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox x:Name="LowerBoundTextBox" FontSize="16" Width="100" Text="{Binding lowerBound, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Upper Bound:" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox x:Name="UpperBoundTextBox" FontSize="16" Width="100" Text="{Binding upperBound, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+
+        <Button Grid.Row="1" Content="Generate" HorizontalAlignment="Left" Margin="490,28,0,40" Click="GenerateButton_Click" RenderTransformOrigin="0.089,0.812" Grid.RowSpan="2"  />
+
+
+
+
+
+        <Grid Grid.Row="3">
+            <StackPanel Orientation="Horizontal" >
+                <Button  Width="80" Content="Start"  Click="PrimeContinueButton_Click" Margin="30,0"/>
+
+                <Button  Width="80" Content="Pause"  Click="PrimePauseButton_Click" Margin="30,0" />
+
+                <Button  Width="80" Content="Start" Click="FibonacciContinueButton_Click" Margin="90,0,0,0"/>
+
+                <Button  Width="80" Content="Pause" Click="FibonacciPauseButton_Click" Margin="30,0,30,0" />
+
+
+
+
+            </StackPanel>
+        </Grid>
+
+        <ListBox x:Name="PrimeNumbersListBox" Grid.Row="4" Margin="10,10,335,-46" ItemsSource="{Binding PrimeNumbers}"/>
+        <ListBox x:Name="FibonacciNumbersListBox" Grid.Row="4" Margin="334,10,10,-46" ItemsSource="{Binding FibonacciNumbers}"/>
+
+
+
+    </Grid>
+</UserControl>

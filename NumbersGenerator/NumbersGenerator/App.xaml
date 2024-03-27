@@ -1,0 +1,44 @@
+﻿<Application x:Class="NumbersGenerator.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:NumbersGenerator"
+             xmlns:view="clr-namespace:NumbersGenerator.Views"
+             xmlns:viewModel="clr-namespace:NumbersGenerator.ViewModels">
+    <Application.Resources>
+        <ResourceDictionary>
+
+        <DataTemplate DataType="{x:Type viewModel:MainWindowViewModel}">
+            <view:MainWindowView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:FirstTaskViewModel}">
+            <view:FirstTaskUCView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:SecondTaskViewModel}">
+            <view:SecondTaskUCView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:ThirdTaskViewModel}">
+            <view:ThirdTaskUCView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:FourthTaskViewModel}">
+            <view:FourthTaskUCView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:FifthTaskViewModel}">
+            <view:FifthTaskUCView/>
+        </DataTemplate>
+
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="NumbersGenerator.Views.SecondTaskUCView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NumbersGenerator.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="250"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <TextBlock Text="Fibonacci Numbers" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+        </Grid>
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Lower Bound:" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox x:Name="LowerBoundTextBox" FontSize="16" Width="100" Text="{Binding lowerBound, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Upper Bound:" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox x:Name="UpperBoundTextBox" FontSize="16" Width="100" Text="{Binding upperBound, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+
+        <Button Grid.Row="3" Content="Generate" HorizontalAlignment="Center" Margin="0,24,0,24" Click="GenerateButton_Click"  />
+
+        <ListBox x:Name="FibonacciListBox" Grid.Row="4" Margin="10,10,10,-36" ItemsSource="{Binding FibonacciBumbers}"/>
+
+    </Grid>
+</UserControl>
