@@ -1,0 +1,39 @@
+
+
+.darkColor {
+    background-color: #9e354a;
+    margin: -2.5%;
+    padding: 10px;
+}
+
+
+ body {
+     margin: 0;
+     padding: 0;
+     background-color: #f0f0f0;
+     font-family: Calibri;
+     font-size: 24px;
+     color: #fff;
+ }
+.container {
+    background-color: #eb9dad;
+    width: 500px;
+    margin: 100px auto;
+    padding: 10px;
+}
+ol {
+    margin: 20px;
+    padding: 0;
+
+}
+li {
+    background-color: #c46275;
+    margin: 10px;
+    padding: 10px;
+
+
+}
+
+
+
+
