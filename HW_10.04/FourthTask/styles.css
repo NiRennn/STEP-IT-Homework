@@ -1,0 +1,77 @@
+body,
+html {
+  margin: 0px;
+}
+
+.foot-bar {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.foot-first-column {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+}
+.foot-second-column {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+.foot-media {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  margin-top: 70px;
+}
+
+li {
+  margin: 5px;
+}
+
+.foot-item-text {
+  color: aliceblue;
+  font-size: 19px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.foot-media .foot-item img {
+  width: 50px;
+  margin: 10px;
+}
+
+.copy-and-company {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foot-item-text:hover {
+  text-decoration: underline;
+  text-decoration-color: aliceblue;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.media-icon-fb:hover {
+  content: url(icons/fb.png);
+}
+
+.media-icon-insta:hover {
+  content: url(icons/insta.png);
+}
+.media-icon-youtube:hover {
+  content: url(icons/youtube.png);
+}
