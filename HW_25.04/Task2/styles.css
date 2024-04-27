@@ -1,0 +1,34 @@
+html,
+body {
+  margin: 0px;
+}
+
+.navbar {
+  background-color: #8a8a8a;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.nav-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.nav-item {
+  margin-bottom: 20px;
+}
+
+.nav-item-icons {
+  width: 65px;
+}
+
+.nav-item-text {
+  font-family: "Inter", sans-serif;
+}

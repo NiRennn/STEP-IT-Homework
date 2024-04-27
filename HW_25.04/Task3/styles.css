@@ -1,0 +1,85 @@
+html,
+body {
+  margin: 10px;
+  background-color: #f5f5f5;
+  display: flex;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.container {
+  width: 200px;
+  height: 360px;
+  background-color: white;
+  border-radius: 20px;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.container:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  transition: box-shadow 1s ease;
+}
+
+.container-name {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.container-line {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 3px;
+  margin: auto;
+}
+
+.container-price {
+  display: flex;
+  justify-content: center;
+  font-size: 38px;
+  margin-top: 23px;
+}
+
+.container-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.container-list-items {
+  list-style-type: none;
+}
+
+.container-list-items li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  text-align: center;
+  margin-left: -37px;
+}
+
+.container-buy-button {
+  border-radius: 12%;
+  width: 100px;
+  height: 40px;
+  color: white;
+  border-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.first-color {
+  background-color: #c73756;
+}
+.second-color {
+  background-color: #d7913b;
+}
+.third-color {
+  background-color: #2b6689;
+}
+.fourth-color {
+  background-color: #63bb34;
+}
