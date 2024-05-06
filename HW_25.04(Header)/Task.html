@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="Task.css">
+      <title>Document</title>
+  </head>
+
+  <body>
+      <div class="container">
+          <nav class="menu">
+            <ul>
+              <li class="menu-item active" onclick="toggleActive(this)">Home</li>
+              <li class="menu-item" onclick="toggleActive(this)">Catalog</li>
+              <li class="menu-item" onclick="toggleActive(this)">Logistics</li>
+              <li class="menu-item" onclick="toggleActive(this)">About us</li>
+            </ul>
+          </nav>
+      </div>
+  </body>
+  <script>
+    function toggleActive(clickedElement) {
+        var menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(function(item) {
+            if (item === clickedElement) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+  </script>
+</html>
