@@ -1,0 +1,64 @@
+.contacts {
+    height: 350px;
+    margin: 50px 400px;
+    display: flex;
+    flex-wrap: wrap; 
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(2, 7, 0, 0.24);
+}
+
+.info, .map-info {
+    flex: 1; 
+    min-width: 300px; 
+    box-sizing: border-box; 
+    margin: 10px; 
+}
+
+.info h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.info p {
+    margin-left: 20px;
+}
+
+.phone-numbers {
+    font-size: 18px;
+}
+
+.info ul {
+    list-style-type: none;
+}
+
+.contacts-map {
+    margin-top: 25px;
+    border-radius: 15px;
+    width: 80%; /* Ensure image is responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 1200px) {
+    .contacts {
+        margin: 0px 50px; /* Adjust margins for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts {
+        flex-direction: column; /* Stack items vertically on small screens */
+        height: auto; /* Let height adjust based on content */
+        margin: 0px 20px; /* Adjust margins for small screens */
+    }
+
+    .info, .map-info {
+        width: 100%; /* Full width for each item */
+        margin: 0; /* Remove extra margins */
+    }
+
+    .contacts-map {
+        margin-top: 20px;
+        border-radius: 15px;
+    }
+}

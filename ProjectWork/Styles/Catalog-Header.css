@@ -1,0 +1,57 @@
+.catalog-header {
+    height: 110px;
+    background-color:#292626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.catalog-horizontal-logo {
+    height: 80px;
+    margin-left: 100px;
+
+}
+
+.catalog-navbar {
+
+}
+
+
+.catalog-header-items {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 22px;
+    margin-right: 40px;
+    margin-left: 40px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+}
+
+
+
+
+.catalog-header-items:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+  color: #3EB489;
+}
+
+
+.nav {
+    list-style-type: none;
+    display: flex;
+}
+
+
+.navbar-user-favorites {
+    height: 28px;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+
+}
+
+.navbar-user-favorites:hover {
+    filter: invert(41%) sepia(63%) saturate(668%) hue-rotate(88deg) brightness(91%) contrast(83%);
+}
