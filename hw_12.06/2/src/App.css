@@ -1,0 +1,24 @@
+/* src/App.css */
+.App {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    cursor: pointer;
+    color: blue;
+}
+
+h2:hover {
+    text-decoration: underline;
+}
+
+p {
+    margin: 5px 0;
+}

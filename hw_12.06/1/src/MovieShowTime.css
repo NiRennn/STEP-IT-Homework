@@ -1,0 +1,31 @@
+
+.movie-show-time {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 10px;
+    margin-top: 10px;
+
+}
+
+.show-time-button {
+    background-color: lightgray;
+    height: 30px;
+    padding: 5px 10px; 
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s; 
+
+}
+
+.show-time-button:hover {
+    background-color: gray; 
+}
