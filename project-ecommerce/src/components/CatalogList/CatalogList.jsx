@@ -5,7 +5,7 @@ import redLikeFill from "../../Logos/red-like-fill.svg";
 import redLike from "../../Logos/red-like.svg";
 import blackLike from "../../Logos/black-like.svg";
 import { Link } from "react-router-dom";
-
+ 
 const sortOptions = [
   { value: "price-asc", label: "По возр. цены" },
   { value: "price-desc", label: "По убыв. цены" },
@@ -15,10 +15,9 @@ const sortOptions = [
 
 
 export default function CatalogList() {
-
-  
   const [sort, setSort] = useState(sortOptions[0].value);
   const [liked, setLiked] = useState({});
+  
 
   const handleSortChange = (event) => {
     setSort(event.target.value);
@@ -30,7 +29,7 @@ export default function CatalogList() {
       [id]: !prevLiked[id],
     }));
   };
- 
+
   return (
     <div className="list-container">
       <div className="sort-by">
@@ -49,42 +48,34 @@ export default function CatalogList() {
       </div>
       <div className="shoes-list">
         {shoes.map((shoe) => (
-          <Link
-            key={shoe.id}
-            to={`/product/${shoe.title}`}
-            className="card"
-          >
-            <div className="image-container">
+          <div key={shoe.id} className="card">
+            <Link to={`/product/${shoe.title}`}>
               <img
                 src={require(`../../Sneakers/${shoe.title}.jpg`)}
                 alt={shoe.name}
               />
-              <button
-                className={`like-button ${liked[shoe.id] ? "liked" : ""}`}
-                onClick={(e) => {
-                  handleLikeClick(shoe.id);
-                }}
-              >
-                <img
-                  src={liked[shoe.id] ? redLikeFill : blackLike}
-                  alt="like"
-                />
-              </button>
-            </div>
-            <div className="card-information">
-            <p className="card-brand">{shoe.brand}</p>
-            <h3 className="card-shoe-gender">
-              {shoe.gender === "Male"
-                ? "Мужские "
-                : shoe.gender === "Female"
-                ? "Женские "
-                : "Детские "}
-              {shoe.name}
-            </h3>
-            <p className="card-price">{shoe.price} ₽</p>
-            </div>
-
-          </Link>
+            </Link>
+            <button
+              className={`like-button ${liked[shoe.id] ? "liked" : ""}`}
+              onClick={() => handleLikeClick(shoe.id)}
+            >
+              <img src={liked[shoe.id] ? redLikeFill : blackLike} alt="like" />
+            </button>
+            <Link to={`/product/${shoe.title}`}>
+              <div className="card-information">
+                <p className="card-brand">{shoe.brand}</p>
+                <h3 className="card-shoe-gender">
+                  {shoe.gender === "Male"
+                    ? "Мужские "
+                    : shoe.gender === "Female"
+                    ? "Женские "
+                    : "Детские "}
+                  {shoe.name}
+                </h3>
+                <p className="card-price">{shoe.price} ₽</p>
+              </div>
+            </Link>
+          </div>
         ))}
       </div>
     </div>

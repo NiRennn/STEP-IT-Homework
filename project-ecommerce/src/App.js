@@ -3,7 +3,6 @@ import Catalog from "./components/Catalog/Catalog";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import HomePage from "./components/HomePage/HomePage";
-// import shoes from "./ShoesArray";
 import { Outlet } from "react-router-dom";
 
 function App() {

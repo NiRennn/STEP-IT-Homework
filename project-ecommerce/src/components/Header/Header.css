@@ -1,21 +1,21 @@
-
 .header-container {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  left: 0;
+  top: 0;
+  justify-content: space-around;
   align-items: center;
   padding: 10px 0px;
   background-color: #f8f9fa;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 .logo-container img {
   height: 65px;
 }
-
 
 .navbar-container {
   display: flex;
@@ -30,16 +30,12 @@
   font-size: 1.24rem;
   transition: color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
-
 }
 
 .nav-button:hover {
   color: blueviolet;
   transform: scale(1.1);
 }
-
-
-
 
 .user-favorites-container {
   display: flex;
@@ -83,6 +79,8 @@
 .user-menu a:hover {
   background-color: #dadddf;
 }
+
+
 
 
 

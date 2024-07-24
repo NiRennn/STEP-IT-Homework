@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./Catalog.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -11,9 +11,24 @@ export default function Catalog() {
     price: [0, 100000],
     brands: [],
     sizes: [],
-  });  
+  });   
   
-  
+  // const [filteredShoes, setFilteredShoes] = useState(shoes);
+
+  // useEffect(() => {
+  //   const applyFilters = () => {
+  //     const filtered = shoes.filter((shoe) => {
+  //       const matchesPrice = shoe.price >= filters.price[0] && shoe.price <= filters.price[1];
+  //       const matchesBrand = filters.brands.length === 0 || filters.brands.includes(shoe.brand);
+  //       const matchesSize = filters.sizes.length === 0 || shoe.sizes.some((size) => filters.sizes.includes(size));
+        
+  //       return matchesPrice && matchesBrand && matchesSize;
+  //     });
+  //     setFilteredShoes(filtered);
+  //   };
+
+  //   applyFilters();
+  // }, [filters]);
   
   return (
     <div className="catalog-container">

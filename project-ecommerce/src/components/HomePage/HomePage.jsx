@@ -4,22 +4,20 @@ import BrandsCarousel from "../BrandsCarousel/BrandsCarousel";
 import NewArrivalsCarousel from "../ArrivalsCarousel/NewArrivalsCarousel";
 import GenderSelection from "../GenderSelection/GenderSelection";
 import PopularNow from "../PopularNow/PopularNow";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-
 
 export default function HomePage() {
   return (
     <div className="homepage-container">
-      <Header/>
+      <Header />
       <NewArrivalsCarousel />
-      <PopularNow />
-
-      <GenderSelection />
       <p className="leaders">Лидеры продаж</p>
+      <PopularNow />
+      <GenderSelection />
       <BrandsCarousel />
-      <Footer/>
+      <Footer />
     </div>
   );
 }

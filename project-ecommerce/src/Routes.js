@@ -1,6 +1,9 @@
 import Catalog from "./components/Catalog/Catalog";
 import HomePage from "./components/HomePage/HomePage";
+import Login from "./components/Login/Login";
 import ProductPage from "./components/ProductPage/ProductPage";
+import Register from "./components/Register/Register";
+
 
 const Routes = [
   {
@@ -17,8 +20,9 @@ const Routes = [
   },
   {
     path: "/product/:title",
-    element: <ProductPage/>
-  }
+    element: <ProductPage/>,
+  },
+
 
 ];
 
