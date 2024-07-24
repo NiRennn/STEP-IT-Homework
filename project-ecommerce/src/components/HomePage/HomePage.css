@@ -1,0 +1,18 @@
+
+
+.homepage-container {
+    width: 100%;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.leaders {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 1.75rem;
+}

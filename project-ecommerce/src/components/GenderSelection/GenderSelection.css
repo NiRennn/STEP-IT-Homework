@@ -1,0 +1,46 @@
+
+.container-gender-selection {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+    gap: 25px;
+  }
+  
+  .container-gender-selection-item {
+    position: relative;
+    width: 450px; 
+    height: 550px; 
+    overflow: hidden;
+  }
+  
+
+  .container-gender-selection-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .container-gender-selection-item-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+  }
+  
+  .container-gender-selection-item:hover img {
+    filter: brightness(50%);
+  }
+  
+  .container-gender-selection-item:hover .container-gender-selection-item-text {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  

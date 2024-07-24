@@ -1,0 +1,11 @@
+<svg width="200" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+  <!-- Text for "Shoes" -->
+  <text x="50%" y="40" text-anchor="middle" font-size="38" font-family="Arial" fill="#000000">
+    Shoes
+  </text>
+  
+  <!-- Text for "Market" -->
+  <text x="65%" y="80" text-anchor="middle" font-size="38" font-family="Arial" fill="#7D7D7D">
+    Market
+  </text>
+</svg>
