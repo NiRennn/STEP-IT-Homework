@@ -1,18 +1,30 @@
-
-
 .homepage-container {
-    width: 100%;
-    padding: 10px 0px;
+    width: 70%;
+    padding: 10px 0;
+    margin: 0px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+}
+  
+.leaders {
+    text-align: center;
+    font-size: 1.75rem;
+    margin: 20px 0;
+}
+  
+@media (max-width: 768px) {
+    .homepage-container {
+        padding: 5px;
+    }
+  
+    .leaders {
+        font-size: 1.5rem;
+    }
 }
 
-.leaders {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    font-size: 1.75rem;
+
+* {
+    /* border: 1px solid red; */
 }

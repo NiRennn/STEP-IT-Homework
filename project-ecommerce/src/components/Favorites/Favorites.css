@@ -1,0 +1,27 @@
+
+
+.favorites-page-container {
+    width: 70%;
+    margin: auto;
+    height: 100vh;
+}
+
+.container-for-something {
+    height: 100px;
+  }
+
+  .favorites-container {
+    width: 100%;
+
+  }
+
+
+
+
+  .no-favorites p {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .no-favorites button {
+  }

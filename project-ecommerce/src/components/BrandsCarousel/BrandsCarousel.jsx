@@ -1,4 +1,5 @@
-import "./BrandsCarousel.css";
+import React from 'react';
+import './BrandsCarousel.css'
 
 const BrandsCarousel = () => {
   return (

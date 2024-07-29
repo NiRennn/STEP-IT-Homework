@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState } from "react";
 import "./Catalog.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -11,35 +11,51 @@ export default function Catalog() {
     price: [0, 100000],
     brands: [],
     sizes: [],
-  });   
-  
-  // const [filteredShoes, setFilteredShoes] = useState(shoes);
+    gender: [],
+  }); 
 
-  // useEffect(() => {
-  //   const applyFilters = () => {
-  //     const filtered = shoes.filter((shoe) => {
-  //       const matchesPrice = shoe.price >= filters.price[0] && shoe.price <= filters.price[1];
-  //       const matchesBrand = filters.brands.length === 0 || filters.brands.includes(shoe.brand);
-  //       const matchesSize = filters.sizes.length === 0 || shoe.sizes.some((size) => filters.sizes.includes(size));
-        
-  //       return matchesPrice && matchesBrand && matchesSize;
-  //     });
-  //     setFilteredShoes(filtered);
-  //   };
+  const [activeGender, setActiveGender] = useState(null); 
 
-  //   applyFilters();
-  // }, [filters]);
-  
+  const getFilteredShoes = () => {
+    return shoes.filter(shoe => {
+      const price = parseFloat(shoe.price.replace(/\s/g, ''));
+      if (price < filters.price[0] || price > filters.price[1]) {
+        return false;
+      }
+      if (filters.brands.length > 0 && !filters.brands.includes(shoe.brand)) {
+        return false;
+      }
+      if (filters.sizes.length > 0 && !shoe.sizes.some(size => filters.sizes.includes(size.toString()))) {
+        return false;
+      }
+      if (filters.gender.length > 0 && !filters.gender.includes(shoe.gender.toLowerCase())) { 
+        return false;
+      }
+      return true;
+    });
+  };
+
+  const handleGenderChange = (gender) => {
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      gender: gender ? [gender] : [], 
+    }));
+    setActiveGender(gender);
+  };
+
   return (
     <div className="catalog-container">
       <Header />
       <p className="all-shoes-p">Вся обувь — {shoes.length}</p>
-
       <div className="filter-list-container">
-        <CatalogFilter filters={filters} setFilters={setFilters} />
-        <CatalogList filters={filters} />
+        <CatalogFilter
+          filters={filters}
+          setFilters={setFilters}
+          activeGender={activeGender}
+          setActiveGender={handleGenderChange}
+        />
+        <CatalogList filters={filters} shoes={getFilteredShoes()} />
       </div>
- 
       <Footer />
     </div>
   );

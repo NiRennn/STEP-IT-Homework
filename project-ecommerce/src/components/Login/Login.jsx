@@ -1,30 +1,58 @@
+// src/components/Login/Login.js
+
 import React, { useState } from "react";
-import loginPhoto from "../../Logos/Login-Photo.jpg";
-import xMark from "../../Logos/xmark.svg";
 import "../Login/Login.css";
+import { useUser } from "../../contexts/UserContext";
 
 export default function Login({ onClose, openRegister }) {
+  const { login } = useUser();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (email && password) {
+      // Здесь можно добавить проверку на существование пользователя
+      login({ email });
+      onClose();
+    } else {
+      alert("Пожалуйста, заполните все поля");
+    }
+  };
+
   return (
     <div className="modal-overlay">
       <div className="modal-window">
-        <div className="modal-window-left-side">
-          <img
-            src={loginPhoto}
-            alt="Login-Photo"
-            className="modal-login-photo"
-          />
-        </div>
-        <div className="modal-window-right-side">
-          <button className="close-modal" onClick={onClose}>
-            <img src={xMark} alt="close-btn" />
-          </button>
+        <button className="close-modal" onClick={onClose}>
+          &times;
+        </button>
 
-          <div className="modal-window-right-side-container">
-            <h1>Вход</h1>
-            <input type="email" name="Email" placeholder="Email" />
-            <input type="password" name="Password" placeholder="Password" />
-            <button className="forgot-password-button">Забыли пароль?</button>
-            <button className="log-in-button">Войти</button>
+        <div className="modal-content">
+          <h1>Вход</h1>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              name="Email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              name="Password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button className="forgot-password-button" type="button">
+              Забыли пароль?
+            </button>
+            <button className="log-in-button" type="submit">
+              Войти
+            </button>
             <div className="to-registration-section">
               <p className="no-account">Нет аккаунта?</p>
               <a
@@ -38,7 +66,7 @@ export default function Login({ onClose, openRegister }) {
                 Регистрация
               </a>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

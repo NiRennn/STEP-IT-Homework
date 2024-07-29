@@ -10,14 +10,17 @@ import Footer from "../Footer/Footer";
 
 export default function HomePage() {
   return (
-    <div className="homepage-container">
+    <div>
       <Header />
-      <NewArrivalsCarousel />
-      <p className="leaders">Лидеры продаж</p>
-      <PopularNow />
-      <GenderSelection />
-      <BrandsCarousel />
+      <div className="homepage-container">
+        <NewArrivalsCarousel />
+        <p className="leaders">Лидеры продаж</p>
+        <PopularNow />
+        <GenderSelection />
+        <BrandsCarousel />
+      </div>
+
       <Footer />
-    </div>
+    </div> 
   );
 }

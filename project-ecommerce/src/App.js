@@ -1,25 +1,17 @@
-import "./App.css";
-import Catalog from "./components/Catalog/Catalog";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-import HomePage from "./components/HomePage/HomePage";
-import { Outlet } from "react-router-dom";
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import { UserProvider } from './contexts/UserContext'; // Импортируем UserProvider
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      
-      {/* <header>
-        <Header />
-      </header> */}
-      <main>
-        <Outlet />
-        {/* Outlet is used to render nested routes */}
-      </main>
-      {/* <footer>
-        <Footer />
-      </footer> */}
-    </div>
+    <UserProvider>
+      <div className="App">
+        <main>
+          <Outlet />
+        </main>
+      </div>
+    </UserProvider>
   );
 }
 

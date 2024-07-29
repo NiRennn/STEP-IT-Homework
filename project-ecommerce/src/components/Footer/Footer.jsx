@@ -18,7 +18,7 @@ export default function Footer() {
           </li>
         </ul>
       </div>
-      <div className="footer-section">
+      <div className="footer-section"> 
         <h4>Полезные ссылки</h4>
         <ul>
           <li>

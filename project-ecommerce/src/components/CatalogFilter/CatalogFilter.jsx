@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import "./CatalogFilter.css";
@@ -6,13 +6,12 @@ import "./CatalogFilter.css";
 const brands = [
   "Adidas",
   "ASICS",
-  "CONVERSE",
   "JORDAN",
   "LACOSTE",
-  "NEW BALANCE",
+  "New Balance",
   "Nike",
-  "Puma",
-  "VANS",
+  "PUMA",
+  "Vans",
   "Converse",
 ];
  
@@ -40,10 +39,14 @@ const sizes = [
   "46",
 ];
 
-export default function CatalogFilter({ filters, setFilters }) {
-  const [price, setPrice] = useState([0, 100000]);
-  const [selectedBrands, setSelectedBrands] = useState([]);
-  const [selectedSizes, setSelectedSizes] = useState([]);
+export default function CatalogFilter({ filters, setFilters, activeGender, setActiveGender }) {
+  const [price, setPrice] = useState(filters.price);
+  const [selectedBrands, setSelectedBrands] = useState(filters.brands);
+  const [selectedSizes, setSelectedSizes] = useState(filters.sizes);
+
+  useEffect(() => {
+    setFilters({ price, brands: selectedBrands, sizes: selectedSizes, gender: filters.gender });
+  }, [price, selectedBrands, selectedSizes, filters.gender, setFilters]);
 
   const handleBrandChange = (brand) => {
     setSelectedBrands((prevSelectedBrands) =>
@@ -62,18 +65,39 @@ export default function CatalogFilter({ filters, setFilters }) {
   };
 
   const handleSearch = () => {
-    setFilters({ price, brands: selectedBrands, sizes: selectedSizes });
+    setFilters({ price, brands: selectedBrands, sizes: selectedSizes, gender: activeGender });
   };
 
   const handleReset = () => {
     setPrice([0, 100000]);
     setSelectedBrands([]);
     setSelectedSizes([]);
-    setFilters({ price: [0, 100000], brands: [], sizes: [] });
+    setFilters({ price: [0, 100000], brands: [], sizes: [], gender: [] });
   };
 
   return (
     <div className="filter-container">
+      <div className="filter-section">
+        <h2>Пол</h2>
+        <button
+          className={`gender-button ${activeGender === 'male' ? 'active' : ''}`}
+          onClick={() => setActiveGender(activeGender === 'male' ? null : 'male')}
+        >
+          Мужчинам
+        </button>
+        <button
+          className={`gender-button ${activeGender === 'female' ? 'active' : ''}`}
+          onClick={() => setActiveGender(activeGender === 'female' ? null : 'female')}
+        >
+          Женщинам
+        </button>
+        <button
+          className={`gender-button ${activeGender === 'kids' ? 'active' : ''}`}
+          onClick={() => setActiveGender(activeGender === 'kids' ? null : 'kids')}
+        >
+          Детям
+        </button>
+      </div>
       <div className="filter-section">
         <h2>Цена</h2>
         <Slider
@@ -90,7 +114,7 @@ export default function CatalogFilter({ filters, setFilters }) {
         </div>
       </div>
       <div className="filter-section">
-        <hr></hr>
+        <hr />
         <h2>Бренды</h2>
         {brands.map((brand, index) => (
           <div key={index} className="brand-checkbox">
@@ -112,9 +136,7 @@ export default function CatalogFilter({ filters, setFilters }) {
           {sizes.map((size, index) => (
             <div
               key={index}
-              className={`size-option ${
-                selectedSizes.includes(size) ? "selected" : ""
-              }`}
+              className={`size-option ${selectedSizes.includes(size) ? 'selected' : ''}`}
               onClick={() => handleSizeChange(size)}
             >
               {size}
@@ -123,9 +145,7 @@ export default function CatalogFilter({ filters, setFilters }) {
         </div>
       </div>
       <div className="filter-section">
-        <button className="search-button" onClick={handleSearch}>
-          Поиск
-        </button>
+
         <button className="reset-button" onClick={handleReset}>
           Сбросить
         </button>

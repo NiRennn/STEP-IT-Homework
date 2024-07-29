@@ -6,15 +6,21 @@ import Register from "../Register/Register";
 
 import logo from "../../Logos/logo.svg";
 import user from "../../Logos/user.svg";
-import settings from "../../Logos/settings.svg";
+import favorites from "../../Logos/black-like.svg";
+import burgerIcon from "../../Logos/burger-menu.svg";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [registerOpen, setRegisterOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   const openLogin = () => {
@@ -48,12 +54,11 @@ export default function Header() {
         <Link to="/news">
           <button className="nav-button">Новости</button>
         </Link>
-        <Link to="/about">
-          <button className="nav-button">О Нас</button>
-        </Link>
       </div>
       <div className="user-favorites-container">
-        <img src={settings} alt="Settings" />
+        <Link to="/favorites">
+          <img src={favorites} alt="Favorites" />
+        </Link>{" "}
         <div className="user-menu-container">
           <img src={user} alt="User" onClick={toggleMenu} />
           {menuOpen && (
@@ -64,10 +69,24 @@ export default function Header() {
             </div>
           )}
         </div>
+        <div className="burger-menu-container">
+          <img src={burgerIcon} alt="Burger Menu" onClick={toggleMobileMenu} />
+        </div>
       </div>
-
+      {mobileMenuOpen && (
+        <div className="mobile-menu">
+          <Link to="/home" onClick={toggleMobileMenu}>
+            Главная
+          </Link>
+          <Link to="/catalog" onClick={toggleMobileMenu}>
+            Каталог
+          </Link>
+          <Link to="/news" onClick={toggleMobileMenu}>
+            Новости
+          </Link>
+        </div>
+      )}
       {loginOpen && <Login onClose={closeLogin} openRegister={openRegister} />}
-
       {registerOpen && (
         <Register onClose={closeRegister} openLogin={openLogin} />
       )}

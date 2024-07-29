@@ -1,5 +1,5 @@
-import './ArrivalsText.css'
-
+import React from 'react';
+import './ArrivalsText.css';
 
 const ArrivalsText = () => {
     return (
@@ -10,6 +10,5 @@ const ArrivalsText = () => {
         </div>
     )
 }
-
 
 export default ArrivalsText;

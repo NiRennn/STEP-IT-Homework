@@ -2,7 +2,7 @@
   width: 100%;
   height: auto;
 }
- 
+
 .sort-by {
   padding-top: 15px;
   display: flex;
@@ -15,7 +15,7 @@
 .sort-by h {
   font-size: 1.1rem;
 }
-
+ 
 .sort-select {
   width: 10rem;
   padding: 10px;
