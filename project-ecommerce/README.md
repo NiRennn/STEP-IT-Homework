@@ -18,4 +18,6 @@ This web application is an online shoe store created during the learning process
 - **State Management**: Context API
 - **User Interface**: HTML, CSS
 
-- ![image](https://github.com/user-attachments/assets/52f35d8d-5de5-4bc9-80ae-034d923b418f)
+![image](https://github.com/user-attachments/assets/52f35d8d-5de5-4bc9-80ae-034d923b418f)
+![image](https://github.com/user-attachments/assets/3823fc13-5495-4de4-b77d-e5c882cf5e12)
+
