@@ -1,0 +1,97 @@
+.layout-container {
+    width: 50%;
+    margin: 50px auto;
+    min-height: 80vh;
+    background-color:rgb(232, 226, 252);
+    border-radius: 50px;
+    box-shadow: 0px 2px 5px rgb(197, 200, 245);
+}
+
+.input-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.5rem;
+    border-bottom: 1px solid gray;
+    gap: 30px;
+}
+
+.city-input {
+    border-radius: 12px;
+    height: 50%;
+    width: 30%;
+    border: 1px solid white;
+    text-align:center;
+    background-color: white;
+    color: black;
+    box-shadow:none;
+    font-size: medium;
+    text-transform: capitalize;
+
+}
+
+
+
+.search-button {
+    border-radius: 12px;
+    height: 55%;
+    width: 20%;
+    text-align:center;
+    background-color: white;
+    border: 1px solid transparent;
+    box-shadow:none;
+    font-size: medium;
+    transition: 0.6s ease;
+}
+
+.search-button:hover {
+    background-color: black;
+    color: white;
+    transform: scale(105%);
+    box-shadow: 0px 0px 2px white;
+}
+
+.wheather-widget-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 30px 30px;
+
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin: 10px 0;
+}
+
+
+@media (max-width: 480px) {
+    .layout-container {
+      width: 100%;
+      margin: 20px auto;
+      padding: 10px;
+    }
+  
+    .input-button {
+      flex-direction: column;
+      gap: 10px;
+      height: auto;
+    }
+  
+    .city-input, .search-button {
+      width: 80%;
+    }
+  
+    .wheather-widget {
+      width: 100%;
+    }
+  
+    .image-section, .info-section {
+      width: 100%;
+    }
+  
+    .info-section {
+      padding-right: 0;
+    }
+  }
